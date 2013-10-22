@@ -1,0 +1,114 @@
+.task {
+	width:100%;
+	padding:0px;
+	margin:0px;
+	color:#414141 !important;
+}
+
+input:focus{
+	outline:none !important;
+}
+
+input {
+	padding:0px 0px 0px 0px !important;
+	margin:0px !important;
+}
+.error {
+    color:red !important;
+}
+.valid {
+    color:green;
+}
+
+.objective {
+    color: #000000 !important;
+}
+
+.edit_objective {
+    margin:0px;
+    color:#000000;
+    padding:0px;
+    vertical-align: middle;
+}
+
+.objective_width{
+    width:40px;
+}
+
+.objective_date{
+    width:130px;
+}
+
+.objective_tools{
+    width:85px;
+}
+
+.report_clock{
+    width:60px;¨
+}
+
+.report_task{
+    width:100%;
+}
+
+.report_meta{
+    width:60px;
+}
+
+.hero-unit {
+    padding:15px 25px 15px 25px !important;
+}
+
+.table-bordered {
+    border-shadow: 0 !important;
+    -webkit-box-shadow: 0 !imporant;
+}
+
+#report_footer {
+	padding:10px;
+	text-align:center;
+}
+
+.toggle_objectives {
+	cursor:pointer;
+}
+
+.edit_objective {
+	cursor:pointer;
+}
+
+.report {
+	width:100%;
+}
+
+.hashed_report {
+	width:250px;
+}
+
+.report_url {
+	width:260px !important;
+	text-align:center;
+}
+
+.share_report{
+	width:100%;
+
+}
+
+.input_edit{
+	width:500px !important;
+}
+
+#minifooter{
+	font-size:12px;
+	margin:auto;
+	width:100%;
+	text-align:center;
+	background-color:#fafafa;
+	color:#555;
+}
+
+#minifooter a{
+	font-size:12px;
+	color:#05f;
+}

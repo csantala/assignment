@@ -1,0 +1,61 @@
+.ExcelTable2013 {
+	width:100%;
+	font-size: 11pt;
+	font-family: Calibri;
+	font-weight: 100;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.ExcelTable2013 TH {
+	border: none;
+	font-weight: normal;
+	font-size: 14px;
+	height: 17px;
+}
+
+.ExcelTable2013 TD {
+		border: none;
+
+	padding: 0px 4px 0px 2px;
+}
+
+.ExcelTable2013 TD B {
+	border: none;
+	font-weight: bold;
+}
+
+.ExcelTable2013 TD.heading {
+		border: none;
+	text-align: center;
+	width:25px;
+}
+
+.ExcelTable2013 TH.heading {
+}
+
+.ExcelTable2013 TR {
+	border:none;
+}
+
+.ExcelTable2013 TR:hover td {
+}
+
+.ExcelTable2013 td.start {
+		border: none;
+	width:70px;
+	text-align:center;
+}
+
+.ExcelTable2013 input {
+		border: none;
+}
+
+.ExcelTable2013 .objective_count {
+	width:20px;
+	text-align:center;
+}
+
+.ExcelTable2013 .task  {
+	border:none;
+}
