@@ -6,9 +6,7 @@ class Assignment extends CI_Controller {
         parent::__construct();
     }
 
-
 	public function index() {
-
 		if($this->uri->segment(2)) {
 			$assignment_hash = $this->uri->segment(2);
 			$assignment = $this->Objectives_model->get_assignment($assignment_hash);
@@ -34,13 +32,13 @@ class Assignment extends CI_Controller {
 				$objective = $_POST['objective'];
 				$steps = $_POST['steps'];
 
-				$assignment_hash = $_POST['assignment_hash'];
+				$assignment_hash = time();
 
 				$data = array(
 					'project_id' => $assignment_hash,
 					'objective' => $objective,
 					'steps' => $steps,
-					'teacher_email' => $teacher_email
+					'teacher_email' => '' //$teacher_email
 				);
 
 				// write objective and hash to db

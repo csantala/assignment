@@ -14,7 +14,8 @@ class Objectives_model extends CI_Model {
 		$this->db->where('project_id', $project_id);
 		$query = $this->db->get('objectives');
 		$data = $query->result();
-		return $data[0];
+		if (! empty($data[0])) { return $data[0]; }
+		return null;
 	}
 
 	public function update_objective($data) {

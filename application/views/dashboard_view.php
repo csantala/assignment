@@ -51,15 +51,17 @@
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
+        	<form action="/assignment" method="post">
         		<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9" readonly>[scanner]</textarea>
 				<label for="objective"><h5>Objective</h5></label>
-				<input class="span9" type="text" name="objective" style="color:#000" value="<?php // echo $objective;?>">
+				<input class="span9" type="text" name="objective" style="color:#000" value="<?php echo $objective;?>">
 				<br /><br />
 				<label for="notes"><h5>Steps</h5></label>
-				<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9"><?php // echo $steps;?></textarea>
+				<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9"><?php echo $steps;?></textarea>
 				<br /><br />
-				<!--p><input class="span4" type="text" value="<?php echo $assignment_url?>" /></p -->
-				<p><button onclick="window.location='synopsis'" class="btn btn-icon btn-primary glyphicons parents" type="submit" value="Assign"><i></i>Assign</button></p>
+				<input type="hidden" name="project_id" value="<?php echo $assignment_hash?>" />
+				<p><input type="submit" value="     Assign     " class="btn btn-icon btn-primary glyphicons parents" type="submit"></p>
+			</form>
         </div>
 	</div>
 <div id="getlost">
