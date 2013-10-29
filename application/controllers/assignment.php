@@ -18,7 +18,7 @@ class Assignment extends CI_Controller {
 				'objective' => $assignment->objective,
 				'steps' => $assignment->steps,
 				'assignment_hash' => $assignment_hash,
-				'synopsis_url' => site_url() . $synopsis_hash . '/' . $assignment_hash,
+				'synopsis_url' => site_url() . $assignment_hash . '/' . $synopsis_hash,
 				'assignment_url' => site_url() . 'assignment/' . $assignment_hash
 			);
 		 	$this->load->view('assignment_view', $view_data);
@@ -28,7 +28,7 @@ class Assignment extends CI_Controller {
 
 			// receive post from teacher, prepare a synopsis sheet for it, email link to student
 			if (! empty($_POST)) {
-				$teacher_email = $_POST['teacher_email'];
+				$teacher_email = ''; // $_POST['teacher_email'];
 				$objective = $_POST['objective'];
 				$steps = $_POST['steps'];
 

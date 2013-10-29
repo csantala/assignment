@@ -10,8 +10,8 @@ class Home extends CI_Controller {
 
 		$objective = '';
 
-		$assignment_hash = $this->uri->segment(2);
-		$synopsis_hash = $this->uri->segment(1);
+		$assignment_hash = $this->uri->segment(1);
+		$synopsis_hash = $this->uri->segment(2);
         if ($assignment_hash) {
 			$timezone = $_COOKIE['timezone'];
 
@@ -21,7 +21,7 @@ class Home extends CI_Controller {
 			// create new synopses if !$rows
 			if (empty($rows)) {
 	       	    $rows[] = (object)array(
-	                'project_id' => $assignment_hash,
+	                'project_id' => $synopsis_hash,
 	                'position' => 1,
 	                'session' => time(),
 	                'time' => time(),
@@ -34,7 +34,7 @@ class Home extends CI_Controller {
                 'assignment_hash' => $assignment_hash,
                 'steps' => $assignment->steps,
                 'date' => time(), //$rows[0]->time,
-                'project_id' => $assignment_hash,
+                'project_id' => $synopsis_hash,
                 'session' => $rows[0]->session,
                 'rows' => $rows,
                 'timezone' => $timezone
