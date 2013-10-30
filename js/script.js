@@ -69,7 +69,8 @@ $(document).ready(function() {
                 $(this).prev('tr').find('input:text').focus();
             break;
             // insert
-            case 192:
+            // deactivated
+            case 000192:
                 e.preventDefault();
                 $('<tr class="rowx"><td class="heading"></td><td class="start"><span data-time="'+ moment().format('X') + '">' + moment().format('h:mm a') + '</span></td><td><input class="task" type="text" /></td></tr>').insertBefore($(this));
                 update_inputs();
@@ -79,7 +80,8 @@ $(document).ready(function() {
                 elapsed_time(moment().format('X'), session);
             break;
             // delete
-            case 220:
+            // deactivated
+            case 0000220:
                 e.preventDefault();
                 // suppress deletion of first row
                 if (i == 1) {
@@ -104,9 +106,10 @@ $(document).ready(function() {
                     $('<tr class="rowx"><td class="heading">' + next + '</td><td class="start"><span data-time="'+ moment().format('X') + '">' + moment().format('h:mm a') + '</span></td><td><input class="task" type="text" data-i="' + next + '" /></td></tr>').insertAfter($(this));
                 }
                 var task = $(this).find('input:text').val();
-                var time = moment().format('X');;
+                var time = moment().format('X');
+                var et = elapsed_time(moment().format('X'), session);
                 // save position (i) and task
-                write_task('/synopsis/task', i, project_id, session, task, time);
+                write_task('/synopsis/task', i, project_id, session, task, time, et);
                 $(this).next('tr').find('input:text').focus();
                 elapsed_time(moment().format('X'), session);
             break;
@@ -194,7 +197,8 @@ function update_inputs() {
     });
 }
 
-function write_task(url, i, project_id, session, task, time) {
+function write_task(url, i, project_id, session, task, time, elapsed_time) {
+    var assignment_id = $('#rows').data("assignment_id");
     $.ajax({
         type: "POST",
         url: url,
@@ -203,10 +207,12 @@ function write_task(url, i, project_id, session, task, time) {
             project_id: project_id,
             session: session,
             task: task,
-            time: time
+            time: time,
+            elapsed_time: elapsed_time,
+            assignment_id: assignment_id
         }
     }).done(function( msg ) {
-        console.log(msg);
+        console.log(elapsed_time);
     });
 }
 
@@ -219,5 +225,7 @@ function elapsed_time(time, session) {
     var hours = minutes / 60;
     minutes = Math.floor(minutes % 60);
     hours = Math.floor(hours % 24);
-    $("#elapsed_time").text(hours + ":" + minutes + ":" + secs);
+    var elapsed_time = hours + ":" + minutes + ":" + secs;
+    $("#elapsed_time").text(elapsed_time);
+    return elapsed_time;
 }

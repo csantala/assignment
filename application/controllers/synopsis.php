@@ -23,6 +23,7 @@ class Synopsis extends CI_Controller {
 	}
 
 	public function task() {
+		$this->Synopsis_model->update_synopsis();
 		$this->Task_model->update_task();
 	}
 

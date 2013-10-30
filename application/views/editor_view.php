@@ -70,7 +70,7 @@
 
 		        <div class="row-fluid">
 		            <form id="synopsis">
-		                <div id="rows" style="min-height:500px;background-image:url('images/bg3.jpg');" data-project_id="<?php echo $project_id?>" data-session="<?php echo $session?>">
+		                <div id="rows" style="min-height:500px;background-image:url('images/bg3.jpg');" data-assignment_id="<?php echo $assignment_hash?>"  data-project_id="<?php echo $project_id?>" data-session="<?php echo $session?>">
 		                    <table class="ExcelTable2013">
 		                        <tr style="color:#bbb">
 		                            <th></th>

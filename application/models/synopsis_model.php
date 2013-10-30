@@ -14,6 +14,26 @@ class Synopsis_model extends CI_Model {
 		return $data;
 	}
 
+	public function update_synopsis() {
+		$data = array(
+			'synopsis_id' => $_POST['project_id'],
+			'assignment_id' => $_POST['assignment_id'],
+		);
+
+		$query = $this->db->get_where('synopsis', $data);
+
+		$data += array('elapsed_time' => $_POST['elapsed_time']);
+
+		// update if present, otherwise create a new row if unique ($task_id)
+		if ($query->num_rows() > 0) {
+			$this->db->where('synopsis_id', $_POST['project_id']);
+			$this->db->where('assignment_id', $_POST['assignment_id']);
+			$this->db->update('synopsis', $data);
+		} else {
+			$this->db->insert('synopsis', $data);
+		}
+	}
+
 	public function new_synopsis($project_id, $session, $synopsis = null) {
 		$data = array(
 			'user_id' => $this->session->userdata('user_id'),
