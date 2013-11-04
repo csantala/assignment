@@ -55,21 +55,21 @@
         		<p>
         			<div style="position:relative;top:5px;float:left; width:50%"><?php echo date('F j, Y', time()); ?></div>
         			<div style="float:left; width:50%; text-align: right;">
-        			Student Name:  <input id="student_name" name="student_name" class="span3" type="text"  />
+        			Student Name:  <input id="student_name" name="student_name" class="span3" type="text" style="color:#000000"  />
         			</div>
         		</p>
 				<div style="clear:both"></div>
-				<br /><br />
-				<h1>Assignment</h1>
-				<h2><?php echo $objective;?><h2>
-
-				<h3>Steps</h3>
-				<h4><?php echo $steps;?></h4>
+				<br />
+				<label><h5>Objective</h5></label>
+				<input style="color:#000000; width:845px;" type="text" readonly value="<?php echo $objective;?>" />
+<br><br>
+				<label><h5>Steps</h5></label>
+				<textarea style="color:#000000; width:845px;" readonly><?php echo $steps;?></textarea>
 
 				<input type="hidden" value="<?php echo $synopsis_url?>" name="synopsis_url">
 				<input type="hidden" value="<?php echo $synopsis_id;?>" name="synopsis_id">
 				<input type="hidden" value="<?php echo $assignment_id;?>" name="assignment_id">
-				<br />
+			<br><br>
 				<p><button type="submit" class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i>Begin</button></p>
 			</form>
         </div>

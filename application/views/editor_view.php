@@ -57,17 +57,17 @@
         		</p>
 				<div style="clear:both"></div>
 				<br /><br />
-				<h4>Assignment</h4>
-				<h5><?php echo $objective;?><h5>
-
-				<h4>Steps</h4>
-				<h5><?php echo $steps;?></h5>
+				<br />
+				<label><h5>Objective</h5></label>
+				<input style="color:#000000;width:845px;" type="text" readonly value="<?php echo $objective;?>" />
+<br><br>
+				<label><h5>Steps</h5></label>
+				<textarea style="color:#000000;width:845px;" readonly><?php echo $steps;?></textarea>
 		        <span class="details pull-right">
 		        	<?php echo date('F j/y', $date) ?>, elapsed time: <span id="elapsed_time"></span>
 		        	&nbsp;&bull;&nbsp;
 		        	<a class="btn primary confirm" href="/report/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">Done</a>
 		        </span>
-
 
 		        <div class="row-fluid">
 		            <form id="synopsis">

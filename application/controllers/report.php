@@ -75,7 +75,7 @@ class Report extends CI_Controller {
 
 		$assignment = $this->Objectives_model->get_assignment($assignment_hash);
 
-		$report_url = '/report/' . $synopsis_id . '/' . $assignment_hash;
+		$report_url = '/report/' . $synopsis_id;
 		$status = 'submitted';
 		$this->Synopsis_model->update_synopsis_for_report(compact('status', 'report_url', 'synopsis_id'));
 
@@ -131,6 +131,4 @@ class Report extends CI_Controller {
         );
 		return $this->load->view('report_email_view', $data, TRUE);
 	}
-
-
 }
