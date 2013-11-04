@@ -40,7 +40,8 @@
 
 $route['default_controller'] = "create";
 $route['404_override'] = '';
-$route[':num'] = 'dashboard';
+$route['dashboard/:num'] = 'dashboard';
+$route['dashboard/:num/:num'] = 'dashboard';
 $route[':num/:num'] = 'home';
 $route['report/:num'] = 'report';
 $route['assignment/:num'] = 'assignment';

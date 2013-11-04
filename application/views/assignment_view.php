@@ -51,8 +51,8 @@
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
-				<label for="url">ASSIGNMENT URL:</label>
-				<input onclick="select()" class="span5" style="color:#008000" type="text" value="<?php echo $assignment_url;?>">
+				<!--label for="url">ASSIGNMENT URL:</label>
+				<input onclick="select()" class="span5" style="color:#008000" type="text" value="<?php echo $assignment_url;?>"-->
 				<br /><br />
 				<label for="objective"><h5>Objective</h5></label>
 				<input class="span9" type="text" name="objective" style="color:#000" value="<?php echo $objective;?>" readonly>

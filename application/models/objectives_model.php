@@ -10,8 +10,8 @@ class Objectives_model extends CI_Model {
 		else { return $data[0]->objective; }
 	}
 
-	public function get_assignment($project_id) {
-		$this->db->where('project_id', $project_id);
+	public function get_assignment($assignment_id) {
+		$this->db->where('assignment_id', $assignment_id);
 		$query = $this->db->get('objectives');
 		$data = $query->result();
 		if (! empty($data[0])) { return $data[0]; }
@@ -20,12 +20,12 @@ class Objectives_model extends CI_Model {
 
 	public function update_objective($data) {
 		$query = $this->db->get_where('objectives', array(
-			'project_id' => $data['project_id']
+			'dashboard_id' => $data['dashboard_id']
 		));
 
 		// update if present, otherwise create a new row if unique ($objective_id)
 		if ($query->num_rows() > 0) {
-			$this->db->where('project_id', $data['project_id']);
+			$this->db->where('dashboard_id', $data['dashboard_id']);
 			$this->db->update('objectives', $data);
 		} else {
 			$this->db->insert('objectives', $data);

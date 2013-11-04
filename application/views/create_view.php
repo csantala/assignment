@@ -6,7 +6,7 @@
 <!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
-	<title>Dashboard</title>
+	<title>Create Assignment</title>
     <!-- Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -57,7 +57,7 @@
 				<br /><br />
 				<label for="notes"><h5>Steps</h5></label>
 				<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9"></textarea>
-				<br />
+				<br /><br />
 				<p><input type="submit" value="     Create Assignment     " class="btn-primary glyphicons parents" type="submit"></p>
 			</form>
         </div>

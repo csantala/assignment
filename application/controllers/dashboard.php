@@ -8,11 +8,11 @@ class Dashboard extends CI_Controller {
 
 	public function index() {
 		// dashboard hash handling
-		if($this->uri->segment(1)) {
-			$dashboard_hash = $this->uri->segment(1);
+		if($this->uri->segment(2)) {
+			$dashboard_hash = $this->uri->segment(2);
 			$synopsis_hash = time();
-			$assignment_hash = time() + 1;
-			$assignment = $this->Objectives_model->get_assignment($dashboard_hash);
+			$assignment_hash = $this->uri->segment(3);
+			$assignment = $this->Objectives_model->get_assignment($assignment_hash);
 			$view_data = array(
 				'objective' => isset($assignment->objective) ? $assignment->objective : '',
 				'steps' => isset($assignment->steps) ? $assignment->steps : '',

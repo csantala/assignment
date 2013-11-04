@@ -61,7 +61,7 @@ elseif (strpos($_SERVER['SERVER_NAME'], 'a.loc') === 0) {
 	$config['dbhostname']	= "localhost";
 	$config['dbusername']	= "root";
 	$config['dbpassword']	= "metallica";
-	$config['dbname']		= "snopzmini";
+	$config['dbname']		= "assignment";
 
 	# report all errors
 	error_reporting(E_ALL);
