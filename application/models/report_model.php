@@ -27,7 +27,7 @@ class Report_model extends CI_Model {
     }
 
 	public function name_report($hash, $name) {
-		$this->db->where('hash', $hash); error_log($hash);
+		$this->db->where('hash', $hash);
 		$data = array('student_name' => $name);
 		$this->db->update('report', $data);
 	}

@@ -10,11 +10,16 @@ $(document).ready(function() {
 	   $('#getlost').fadeOut("42");
 	});
 
+    //
+    $("#begin").submit(function(e) {
+        var student_name = $('#student_name').val();
+        if (student_name == '') { alert('please enter student name'); return false; }
+    });
+
     // send
     $('.confirm').click(function(){
-       var name = prompt('Send this report to [Teacher (script.js/15)]? \n\nPlease enter your name:');
-        if (name == '') { alert('Please resubit with your name.'); return false; }
-        if (name == null) { return false; }
+       var name = confirm('Submit this report to your instructor?');
+        if (name == false) { return false; }
         else {
             var hash = $('#rows').data("project_id");
              $.ajax({

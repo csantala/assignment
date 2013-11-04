@@ -82,6 +82,17 @@ class Synopsis_model extends CI_Model {
 		return $data[0];
 	}
 
+	public function update_synopsis_for_report($data) {
+		extract($data);
+		$data = array(
+			'synopsis_id' => $synopsis_id,
+			'status' => $status,
+			'report_url' => $report_url
+		);
+		$this->db->where('synopsis_id', $synopsis_id);
+		$query = $this->db->update('synopsis', $data);
+	}
+
 	public function update_seconds() {
 		$this->db->where('user_id', $this->session->userdata('user_id'));
 		$this->db->where('project_id', $_POST['project_id']);

@@ -52,8 +52,8 @@
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
-			<h3>Your report has been submitted to [Teacher submitted_view/55].</h3>
-	   		<h4>Continue to work on your synopsis here: <a href="<?php echo $synopsis_url;?>"><?php echo $synopsis_url;?></a></h4>
+			<h3>Your report has been submitted to your instructor.</h3>
+	   		<h4>See your report here: <a href="<?php echo $synopsis_url;?>"><?php echo $synopsis_url;?></a></h4>
         </div>
 	</div>
     <?php $this->load->view('/components/js_includes') ?>

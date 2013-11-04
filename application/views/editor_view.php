@@ -46,28 +46,26 @@
 
 
 </head>
-<body class="">
-
-     <!-- Content -->
-    <div id="login">
-    	<div class="container">
+<body class="" style="padding:100px">
 
         <div class="innerLR innerT">
         		<p>
-        			<div style="text-align: right;">
-        				<?php echo $student_name; ?>
+        			<div style="position:relative;float:left; width:50%"><?php echo date('F j, Y', time()); ?></div>
+        			<div style="float:left; width:50%; text-align: right;">
+        			<?php echo $student_name; ?>
         			</div>
         		</p>
+				<div style="clear:both"></div>
 				<br /><br />
-				<label for="objective"><h5>Objective</h5></label>
-				<input class="span8" type="text"  style="color:#000" name="objective" value="<?php echo $objective;?>" readonly>
-				<p> <label for="steps"><h5>Steps</h5></label>
-		        <textarea rows="5" id="steps" readonly name="steps" style="color:#000;" class="span8"><?php echo strip_tags(nl2br($steps)); ?></textarea></p>
+				<h4>Assignment</h4>
+				<h5><?php echo $objective;?><h5>
 
+				<h4>Steps</h4>
+				<h5><?php echo $steps;?></h5>
 		        <span class="details pull-right">
 		        	<?php echo date('F j/y', $date) ?>, elapsed time: <span id="elapsed_time"></span>
 		        	&nbsp;&bull;&nbsp;
-		        	<a class="btn primary confirm" href="/report/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">Report</a>
+		        	<a class="btn primary confirm" href="/report/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">Done</a>
 		        </span>
 
 
@@ -114,9 +112,8 @@
 
 		        </div>
 	        </div>
-        <!-- // Content END -->
-        </div>
-      </div>
+
+
 <div id="getlost">
         <?php // $this->load->view('/components/footer') ?>
 </div>

@@ -68,14 +68,18 @@ class Report extends CI_Controller {
         redirect('/report/submitted/' . $project_id . '/' . $asshash);
     }
 
-	public function submitted($project_id, $assignment_hash) {
+	public function submitted($synopsis_id, $assignment_hash) {
 			$view_data = array(
-			'synopsis_url' => site_url() . $project_id.'/'.$assignment_hash
+			'synopsis_url' => site_url() . $assignment_hash.'/'.$synopsis_id
 		);
 
 		$assignment = $this->Objectives_model->get_assignment($assignment_hash);
 
-		$this->email_report($project_id, $assignment);
+		$report_url = '/report/' . $synopsis_id . '/' . $assignment_hash;
+		$status = 'submitted';
+		$this->Synopsis_model->update_synopsis_for_report(compact('status', 'report_url', 'synopsis_id'));
+
+		//$this->email_report($project_id, $assignment);
 
 		$this->load->view('submitted_view', $view_data);
 	}

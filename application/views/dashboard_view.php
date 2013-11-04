@@ -51,35 +51,38 @@
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
-        	<p><input onclick="select()" class="span5" style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
-
-			<table width="100%">
+        	<?php if (! empty($scanner_data)) { ?>
+        	<table id="scanner_data">
 				<th>Student</th>
-				<th>Synopses</th>
 				<th>Elapsed Time</th>
+				<th>Synopses</th>
+				<th>Status</th>
+				<th>Report</th>
 				<?php foreach($scanner_data as $data) { ?>
 				<tr>
 					<td><?php echo $data->student_name;?></td>
-					<td><?php echo 'synopses';?></td>
 					<td><?php echo $data->elapsed_time;?></td>
+					<td><?php echo 'synopses';?></td>
+					<td><?php echo $data->status;?></td>
+					<td><?php if (isset($data->report_url)) { ?><a href="<?php echo $data->report_url;?>">Report</a><?php } ?></td>
 				</tr>
 				<?php } ?>
 			</table>
-<br />
-			<label for="objective"><h5>Objective</h5></label>
+			<?php } ?>
+			<br />
+			<label><h5>Objective</h5></label>
 			<input class="span9" type="text" name="objective" style="color:#000" value="<?php echo $objective;?>" readonly>
 			<br /><br />
-			<label for="notes"><h5>Steps</h5></label>
+			<label><h5>Steps</h5></label>
 			<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9" readonly><?php echo $steps;?></textarea>
 			<br /><br />
-			<input type="hidden" name="project_id" value="<?php echo $assignment_hash?>" />
-
+			<label><h5>Assignment URL</h5></label>
+			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
         </div>
 	</div>
 <div id="getlost">
 	<?php //$this->load->view('/components/footer') ?>
 </div>
-    <?php $this->load->view('/components/themer') ?>
     <?php $this->load->view('/components/js_includes') ?>
 </body>
 </html>

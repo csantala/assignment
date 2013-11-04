@@ -112,3 +112,12 @@ input {
 	font-size:12px;
 	color:#05f;
 }
+
+#scanner_data {
+	width:100%;
+}
+
+#scanner_data th{
+	text-align:left;
+
+}

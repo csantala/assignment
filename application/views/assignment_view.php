@@ -51,30 +51,32 @@
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
-        	<form action="/assignment/begin" method="post">
+        	<form id="begin" action="/assignment/begin" method="post">
         		<p>
-        			<div style="text-align: right;">
-        			<label for="notes"><h5>Student Name</h5></label>
-        			<input name="student_name" class="span4" type="text"  /></div>
+        			<div style="position:relative;top:5px;float:left; width:50%"><?php echo date('F j, Y', time()); ?></div>
+        			<div style="float:left; width:50%; text-align: right;">
+        			Student Name:  <input id="student_name" name="student_name" class="span3" type="text"  />
+        			</div>
         		</p>
+				<div style="clear:both"></div>
+				<br /><br />
+				<h1>Assignment</h1>
+				<h2><?php echo $objective;?><h2>
 
-				<label for="objective"><h5>Objective</h5></label>
-				<input class="span9" type="text" name="objective" style="color:#000" value="<?php echo $objective;?>" readonly>
-				<br /><br />
-				<label for="notes"><h5>Steps</h5></label>
-				<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9" readonly><?php echo $steps;?></textarea>
-				<br /><br />
+				<h3>Steps</h3>
+				<h4><?php echo $steps;?></h4>
+
 				<input type="hidden" value="<?php echo $synopsis_url?>" name="synopsis_url">
 				<input type="hidden" value="<?php echo $synopsis_id;?>" name="synopsis_id">
 				<input type="hidden" value="<?php echo $assignment_id;?>" name="assignment_id">
-				<p><input type="submit" value="     Begin     " class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i></p>
+				<br />
+				<p><button type="submit" class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i>Begin</button></p>
 			</form>
         </div>
 	</div>
 <div id="getlost">
 	<?php //$this->load->view('/components/footer') ?>
 </div>
-    <?php $this->load->view('/components/themer') ?>
     <?php $this->load->view('/components/js_includes') ?>
 </body>
 </html>
