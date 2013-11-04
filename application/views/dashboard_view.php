@@ -52,7 +52,20 @@
     <div id="contentx">
         <div class="innerLR innerT">
         	<p><input onclick="select()" class="span5" style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
-			<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9" readonly>[scanner]</textarea>
+
+			<table width="100%">
+				<th>Student</th>
+				<th>Synopses</th>
+				<th>Elapsed Time</th>
+				<?php foreach($scanner_data as $data) { ?>
+				<tr>
+					<td><?php echo $data->student_name;?></td>
+					<td><?php echo 'synopses';?></td>
+					<td><?php echo $data->elapsed_time;?></td>
+				</tr>
+				<?php } ?>
+			</table>
+<br />
 			<label for="objective"><h5>Objective</h5></label>
 			<input class="span9" type="text" name="objective" style="color:#000" value="<?php echo $objective;?>" readonly>
 			<br /><br />

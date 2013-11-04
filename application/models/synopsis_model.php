@@ -2,6 +2,13 @@
 
 class Synopsis_model extends CI_Model {
 
+	public function scanner($assignment_id) {
+		$this->db->where('assignment_id', $assignment_id);
+		$query = $this->db->get('synopsis');
+		$data = $query->result();
+		return $data;
+	}
+
 	public function synopsis($project_id) {
 		$this->db->where('project_id', $project_id);
 	//	$this->db->where('user_id', $this->session->userdata('user_id'));
@@ -32,6 +39,22 @@ class Synopsis_model extends CI_Model {
 		} else {
 			$this->db->insert('synopsis', $data);
 		}
+	}
+
+	public function label_synopsis() {
+		$data = array(
+			'student_name' => $_POST['student_name'],
+			'synopsis_id' => $_POST['synopsis_id'],
+			'assignment_id' => $_POST['assignment_id']
+		);
+		$this->db->insert('synopsis', $data);
+	}
+
+	public function get_student($synopsis_id) {
+		$this->db->where('synopsis_id', $synopsis_id);
+		$query = $this->db->get('synopsis');
+		$data = $query->result();
+		return $data[0]->student_name;
 	}
 
 	public function new_synopsis($project_id, $session, $synopsis = null) {

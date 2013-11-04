@@ -13,12 +13,16 @@ class Dashboard extends CI_Controller {
 			$synopsis_hash = time();
 			$assignment_hash = $this->uri->segment(3);
 			$assignment = $this->Objectives_model->get_assignment($assignment_hash);
+
+			$scanner_data = $this->Synopsis_model->scanner($assignment_hash);
+
 			$view_data = array(
 				'objective' => isset($assignment->objective) ? $assignment->objective : '',
 				'steps' => isset($assignment->steps) ? $assignment->steps : '',
 				'assignment_hash' => $assignment_hash,
 				'synopsis_url' => site_url() . $synopsis_hash . '/' . $assignment_hash,
-				'assignment_url' => site_url() . 'assignment/' . $assignment_hash
+				'assignment_url' => site_url() . 'assignment/' . $assignment_hash,
+				'scanner_data' => $scanner_data
 			);
 		 	$this->load->view('dashboard_view', $view_data);
 		} else {

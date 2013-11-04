@@ -8,18 +8,19 @@ class Assignment extends CI_Controller {
 
 	public function index() {
 		if($this->uri->segment(2)) {
-			$assignment_hash = $this->uri->segment(2);
-			$assignment = $this->Objectives_model->get_assignment($assignment_hash);
+			$assignment_id = $this->uri->segment(2);
+			$assignment = $this->Objectives_model->get_assignment($assignment_id);
 
 			// todo: proper hashing
-			$synopsis_hash = time();
+			$synopsis_id = time();
 
 			$view_data = array(
 				'objective' => $assignment->objective,
 				'steps' => $assignment->steps,
-				'assignment_hash' => $assignment_hash,
-				'synopsis_url' => site_url() . $assignment_hash . '/' . $synopsis_hash,
-				'assignment_url' => site_url() . 'assignment/' . $assignment_hash
+				'assignment_id' => $assignment_id,
+				'synopsis_id' => $synopsis_id,
+				'synopsis_url' => site_url() . $assignment_id . '/' . $synopsis_id,
+				'assignment_url' => site_url() . 'assignment/' . $assignment_id
 			);
 		 	$this->load->view('assignment_view', $view_data);
 		} else {
@@ -68,5 +69,15 @@ class Assignment extends CI_Controller {
 				$this->load->view('assign_view', $view_data);
 			}
 		}
+	}
+
+	public function begin() {
+		$data = array(
+			'student_name' => $_POST['student_name'],
+			'assignment_id' => $_POST['assignment_id'],
+			'synopsis_id' => $_POST['synopsis_id']
+		);
+		$this->Synopsis_model->label_synopsis($data);
+		redirect($_POST['synopsis_url']);
 	}
 }

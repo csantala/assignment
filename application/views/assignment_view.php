@@ -51,17 +51,24 @@
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
-				<!--label for="url">ASSIGNMENT URL:</label>
-				<input onclick="select()" class="span5" style="color:#008000" type="text" value="<?php echo $assignment_url;?>"-->
-				<br /><br />
+        	<form action="/assignment/begin" method="post">
+        		<p>
+        			<div style="text-align: right;">
+        			<label for="notes"><h5>Student Name</h5></label>
+        			<input name="student_name" class="span4" type="text"  /></div>
+        		</p>
+
 				<label for="objective"><h5>Objective</h5></label>
 				<input class="span9" type="text" name="objective" style="color:#000" value="<?php echo $objective;?>" readonly>
 				<br /><br />
 				<label for="notes"><h5>Steps</h5></label>
 				<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9" readonly><?php echo $steps;?></textarea>
 				<br /><br />
-				<!--p><input class="span4" type="text" value="<?php echo $assignment_url?>" /></p -->
-				<p><button onclick="window.location='<?php echo $synopsis_url?>'" class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i>Begin</button></p>
+				<input type="hidden" value="<?php echo $synopsis_url?>" name="synopsis_url">
+				<input type="hidden" value="<?php echo $synopsis_id;?>" name="synopsis_id">
+				<input type="hidden" value="<?php echo $assignment_id;?>" name="assignment_id">
+				<p><input type="submit" value="     Begin     " class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i></p>
+			</form>
         </div>
 	</div>
 <div id="getlost">

@@ -53,8 +53,11 @@
     	<div class="container">
 
         <div class="innerLR innerT">
-				<!--label for="url">ASSIGNMENT URL:</label>
-				<!--input class="span5" type="text" value="<?php echo $assignment_url;?>" readonly-->
+        		<p>
+        			<div style="text-align: right;">
+        				<?php echo $student_name; ?>
+        			</div>
+        		</p>
 				<br /><br />
 				<label for="objective"><h5>Objective</h5></label>
 				<input class="span8" type="text"  style="color:#000" name="objective" value="<?php echo $objective;?>" readonly>
