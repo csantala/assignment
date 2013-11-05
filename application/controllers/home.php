@@ -10,8 +10,8 @@ class Home extends CI_Controller {
 
 		$objective = '';
 
-		$assignment_hash = $this->uri->segment(1);
-		$synopsis_hash = $this->uri->segment(2);
+		$assignment_hash = $this->uri->segment(2);
+		$synopsis_hash = $this->uri->segment(3);
         if ($assignment_hash) {
 			$timezone = $_COOKIE['timezone'];
 			$assignment = $this->Objectives_model->get_assignment($assignment_hash);

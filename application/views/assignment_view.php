@@ -51,7 +51,7 @@
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
-        	<form id="begin" action="/assignment/begin" method="post">
+        	<form id="begin" action="/create/begin" method="post">
         		<p>
         			<div style="position:relative;top:5px;float:left; width:50%"><?php echo date('F j, Y', time()); ?></div>
         			<div style="float:left; width:50%; text-align: right;">

@@ -40,11 +40,11 @@
 
 $route['default_controller'] = "create";
 $route['404_override'] = '';
-$route['dashboard/:num'] = 'dashboard';
-$route['dashboard/:num/:num'] = 'dashboard';
-$route[':num/:num'] = 'home';
-$route['report/:num'] = 'report';
-$route['assignment/:num'] = 'assignment';
+$route['dashboard/:any'] = 'dashboard';
+$route['dashboard/:any/:any'] = 'dashboard';
+$route['home/:any/:any'] = 'home';
+$route['report/:any'] = 'report';
+$route['assignment/:any'] = 'assignment';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

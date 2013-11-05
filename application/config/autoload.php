@@ -66,7 +66,7 @@ $autoload['libraries'] = array('database', 'Tracker_lib', 'Browser', 'session', 
 */
 
 $autoload['helper'] = array('General_helper', 'url', 'cookie');
-
+$autoload['sparks'] = array('sk-hashids/1.0.5');
 
 /*
 | -------------------------------------------------------------------

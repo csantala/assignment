@@ -3,10 +3,6 @@
 class Test extends CI_Controller {
 
 	public function index() {
-		$timezone = 'Aw_York';
-		 date_default_timezone_set($timezone);
+		echo hashids_encrypt(34423234);
 	}
-
-
-
 }

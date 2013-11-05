@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2013 at 04:38 PM
+-- Generation Time: Nov 04, 2013 at 04:56 PM
 -- Server version: 5.5.15
--- PHP Version: 5.3.26
+-- PHP Version: 5.4.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `assignment`
@@ -30,13 +24,14 @@ CREATE TABLE IF NOT EXISTS `objectives` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `time` int(11) NOT NULL,
   `objective` varchar(300) COLLATE utf32_unicode_ci NOT NULL,
-  `project_id` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
+  `dashboard_id` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL,
   `status` enum('open','closed') COLLATE utf32_unicode_ci NOT NULL DEFAULT 'open',
   `steps` blob NOT NULL,
   `teacher_email` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
+  `assignment_id` varchar(200) COLLATE utf32_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=37 ;
 
 -- --------------------------------------------------------
 
@@ -75,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `report` (
   `assignment_hash` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
   `student_name` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -101,12 +96,14 @@ CREATE TABLE IF NOT EXISTS `statistics` (
 
 CREATE TABLE IF NOT EXISTS `synopsis` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `project_id` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
-  `objective` varchar(500) COLLATE utf32_unicode_ci NOT NULL,
-  `session` int(11) NOT NULL,
+  `assignment_id` varchar(11) COLLATE utf32_unicode_ci NOT NULL,
+  `synopsis_id` varchar(11) COLLATE utf32_unicode_ci NOT NULL,
+  `elapsed_time` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `status` enum('in_progress','submitted','returned','completed') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'in_progress',
+  `student_name` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
+  `report_url` varchar(200) COLLATE utf32_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=49 ;
 
 -- --------------------------------------------------------
 
@@ -122,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `position` int(11) NOT NULL,
   `task` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=517 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=23 ;
 
 -- --------------------------------------------------------
 
@@ -148,30 +145,4 @@ CREATE TABLE IF NOT EXISTS `tracker` (
   `exec_time` float NOT NULL DEFAULT '0',
   `num_queries` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2625 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_email` varchar(255) NOT NULL DEFAULT '',
-  `user_pass` varchar(60) NOT NULL DEFAULT '',
-  `user_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `user_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `user_last_login` datetime DEFAULT NULL,
-  `user_hash` varchar(255) DEFAULT NULL,
-  `user_level` enum('user','administrator') NOT NULL DEFAULT 'user',
-  `user_timezone` varchar(50) NOT NULL,
-  `user_name` varchar(50) NOT NULL,
-  `remember` varchar(20) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_email` (`user_email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2730 ;

@@ -12,8 +12,8 @@ class Create extends CI_Controller {
 			$objective = $_POST['objective'];
 			$steps = $_POST['steps'];
 
-			$dashboard_id = time();
-			$assignment_id = time() + 100;
+			$dashboard_id = hashids_encrypt(time());
+			$assignment_id = hashids_encrypt(time() + rand(0,10000));
 
 			$data = array(
 				'dashboard_id' => $dashboard_id,
@@ -35,5 +35,15 @@ class Create extends CI_Controller {
 		} else {
 			$this->load->view('create_view');
 		}
+	}
+
+	public function begin() {
+		$data = array(
+			'student_name' => $_POST['student_name'],
+			'assignment_id' => $_POST['assignment_id'],
+			'synopsis_id' => $_POST['synopsis_id']
+		);
+		$this->Synopsis_model->label_synopsis($data);
+		redirect($_POST['synopsis_url']);
 	}
 }
