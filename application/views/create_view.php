@@ -1,4 +1,3 @@
-<?php // date_default_timezone_set($timezone); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
@@ -46,26 +45,53 @@
 
     <!-- LESS.js Library -->
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
+	<!-- Form validation -->
+	<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-validate.js"></script>
+	<script type="text/javascript">
+$(document).ready(function () {
+	$('#submit').click(function() {
+ 		$('#assignment_form').submit();
+	});
+	$('#assignment_form').validate({
+	    rules: {
+	    	 objective: {
+	            required: true
+	     	},
+	        teacher_email: {
+	 //           required: true,
+	            email: true
+	        },
+	    },
+	    submitHandler: function (form) {
+			  form.submit()
+	    }
+	});
+});
+	</script>
 </head>
 <body class="" style="padding:100px">
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
-        	<form action="/create" method="post">
+        	<form id="assignment_form" action="/create" method="post">
 				<label for="objective"><h5>Objective</h5></label>
-				<input class="span9" type="text" name="objective" style="color:#000">
+				<input class="span9" type="text" name="objective" id="objective" style="color:#000">
 				<br /><br />
-				<label for="notes"><h5>Steps</h5></label>
-				<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9"></textarea>
+				<label for="steps"><h5>Steps</h5></label>
+				<textarea rows="5" id="steps" name="steps" style="color:#000" class="span9"></textarea>
+				<label for="teacher_email"><h5>Email</h5></label>
+				<input type="text" name="teacher_email" id="teacher_email" style="color:#000">
 				<br /><br />
-				<p><input type="submit" value="     Create Assignment     " class="btn-primary glyphicons parents" type="submit"></p>
+				<p><a type="submit" id="submit" class="btn btn-icon btn-primary glyphicons parents"><i></i>Create Assignment</a></p>
 			</form>
         </div>
 	</div>
 <div id="getlost">
 	<?php //$this->load->view('/components/footer') ?>
 </div>
-    <?php $this->load->view('/components/themer') ?>
-    <?php $this->load->view('/components/js_includes') ?>
+    <?php //$this->load->view('/components/js_includes') ?>
 </body>
 </html>

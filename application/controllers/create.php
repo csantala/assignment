@@ -8,7 +8,7 @@ class Create extends CI_Controller {
 
 	public function index() {
 		if (! empty($_POST)) {
-			$teacher_email = ''; // $_POST['teacher_email'];
+			$teacher_email = $_POST['teacher_email'];
 			$objective = $_POST['objective'];
 			$steps = $_POST['steps'];
 
@@ -19,7 +19,7 @@ class Create extends CI_Controller {
 				'dashboard_id' => $dashboard_id,
 				'objective' => $objective,
 				'steps' => $steps,
-				'teacher_email' => '', //$teacher_email
+				'teacher_email' => $teacher_email,
 				'assignment_id' => $assignment_id
 			);
 

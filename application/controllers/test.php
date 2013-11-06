@@ -5,4 +5,9 @@ class Test extends CI_Controller {
 	public function index() {
 		echo hashids_encrypt(34423234);
 	}
+
+	public function index() {
+		echo hashids_encrypt(34423234);
+	}
+
 }

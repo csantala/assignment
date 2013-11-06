@@ -75,7 +75,6 @@
 	        </div>
 	        <!-- // Row END -->
 	    </div>
-	    <button class="btn">Return To Student</button>
     <!-- // Box END -->
     </div>
 </div>
