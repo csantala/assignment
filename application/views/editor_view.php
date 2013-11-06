@@ -1,4 +1,4 @@
-<?php  date_default_timezone_set('America/Vancouver'); ?>
+<?php  date_default_timezone_set($timezone); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->

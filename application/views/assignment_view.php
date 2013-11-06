@@ -1,4 +1,3 @@
-<?php // date_default_timezone_set($timezone); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
@@ -46,6 +45,14 @@
 
     <!-- LESS.js Library -->
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
+
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script>
+    $(document).ready(function() {
+	var timezone = jstz.determine();
+	$.cookie('timezone', timezone.name()); alert(timezone);
+});
+	</script>
 </head>
 <body class="" style="padding:100px">
      <!-- Content -->

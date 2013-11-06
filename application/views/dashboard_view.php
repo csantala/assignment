@@ -1,4 +1,3 @@
-<?php // date_default_timezone_set($timezone); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
@@ -24,10 +23,11 @@
   	<!-- Bootstrap Extended -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
-	<script src="js/wysihtml5-0.3.0_rc2.js"></script>
-	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-wysihtml5.js"></script>
+
+	<script type="application/javascript" src="js/wysihtml5-0.3.0_rc2.js" ></script>
+	<script type="application/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="application/javascript" src="js/bootstrap.min.js"></script>
+	<script type="application/javascript" src="js/bootstrap-wysihtml5.js"></script>
 
     <!-- Glyphicons Font Icons -->
     <link href="/common/theme/css/glyphicons.css" rel="stylesheet" />
@@ -83,6 +83,6 @@
 <div id="getlost">
 	<?php //$this->load->view('/components/footer') ?>
 </div>
-    <?php $this->load->view('/components/js_includes') ?>
+    <?php $this->load->view('/components/js_includes'); ?>
 </body>
 </html>

@@ -217,7 +217,7 @@ function write_task(url, i, project_id, session, task, time, elapsed_time) {
             assignment_id: assignment_id
         }
     }).done(function( msg ) {
-        console.log(elapsed_time);
+       // console.log(elapsed_time);
     });
 }
 
