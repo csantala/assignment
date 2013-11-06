@@ -53,7 +53,7 @@
     <div id="contentx">
         <div class="innerLR innerT">
 			<h3>Your report has been submitted to your instructor.</h3>
-	   		<h4>See your report here: <a href="<?php echo $synopsis_url;?>"><?php echo $synopsis_url;?></a></h4>
+	   		<h4>See your report here: <a href="<?php echo $report_url;?>"><?php echo $report_url;?></a></h4>
         </div>
 	</div>
     <?php $this->load->view('/components/js_includes') ?>

@@ -10,7 +10,8 @@ class Report_model extends CI_Model {
 			'elapsed_time' => $elapsed_time,
 			'timezone' => $timezone,
 			'hash' => $project_id,
-			'assignment_hash' => $asshash
+			'assignment_hash' => $asshash,
+			'student_name' => $student_name
 		);
 
 	    $query = $this->db->get_where('report', array(
