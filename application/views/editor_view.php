@@ -70,9 +70,7 @@
 <br><br>
 				<label><h5>notes</h5></label>
 				<textarea class="steps" readonly><?php echo $steps;?></textarea>
-		        <span class="details pull-right">
-		        	<?php echo date('F j/y', $date) ?>, elapsed time: <span id="elapsed_time"></span>
-		        </span>
+
 
 		        <div class="row-fluid">
 		            <form id="synopsis">
@@ -81,7 +79,9 @@
 		                        <tr style="color:#bbb">
 		                            <th></th>
 		                            <th>clock</th>
-		                            <th>task</th>
+		                            <th>task 		        <span class="details pull-right">
+		        	elapsed time: <span id="elapsed_time"></span>&nbsp;
+		        </span></th>
 		                        </tr>
 		                            <?php
 		                                $i = 1;
