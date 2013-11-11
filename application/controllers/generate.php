@@ -11,7 +11,8 @@ class Generate extends CI_Controller {
 
     public function generate_report($project_id, $asshash) {
 
-		$student_name = $this->Synopsis_model->get_student($project_id);
+		$student_meta = $this->Synopsis_model->get_student($project_id);
+		$student_name = $student_meta->student_name;
 
         // generate elapsed time
 	     $synopsis = $this->Synopsis_model->synopsis($project_id);

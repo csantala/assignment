@@ -50,7 +50,7 @@
 
         <div class="innerLR innerT">
         		<div id="done">
-        			<a class="btn primary confirm" href="/generate/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">SUBMIT REPORT</a>
+        			<a class="btn primary confirm" href="/generate/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">SUBMIT ASSIGNMENT</a>
         		</div>
         		<div style="clear:both"></div>
         		<p>

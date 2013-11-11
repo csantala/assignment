@@ -7,7 +7,6 @@ class Editor extends CI_Controller {
     }
 
     public function index() {
-    	date_default_timezone_set('America/Vancouver');
         $stats = $this->tracker_lib->track('new synopsis');
         $this->db->insert('tracker', $stats);
 

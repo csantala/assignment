@@ -42,7 +42,7 @@ class Create extends CI_Controller {
 			'student_name' => $_POST['student_name'],
 			'assignment_id' => $_POST['assignment_id'],
 			'synopsis_id' => $_POST['synopsis_id'],
-			'timezone' => $timezone = $_COOKIE['timezone']
+			'timezone' => isset($_COOKIE['timezone']) ? $_COOKIE['timezone'] : 'America/Vancouver'
 		);
 		$this->Synopsis_model->label_synopsis($data);
 		redirect($_POST['synopsis_url']);

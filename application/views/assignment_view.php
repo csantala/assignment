@@ -49,10 +49,10 @@
 	<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script>
-	    $(document).ready(function() {
-			var timezone = jstz.determine();
-			$.cookie('timezone', timezone.name());
-		});
+$(document).ready(function() {
+	var timezone = jstz.determine();
+	$.cookie('timezone', timezone.name());
+});
 	</script>
 </head>
 <body class="" style="padding:100px">
@@ -63,17 +63,16 @@
         		<p>
         			<div style="position:relative;top:5px;float:left; width:50%"><?php echo date('F j, Y', time()); ?></div>
         			<div style="float:left; width:50%; text-align: right;">
-        			Student Name:  <input id="student_name" name="student_name" class="span3" type="text" style="color:#000000"  />
+        			Student Name:  <input id="student_name" name="student_name" class="span3" type="text" style="color:#000000" />
         			</div>
         		</p>
 				<div style="clear:both"></div>
 				<br />
 				<label><h5>Objective</h5></label>
-				<input style="color:#000000; width:845px;" type="text" readonly value="<?php echo $objective;?>" />
+				<input id="objective" type="text" readonly value="<?php echo $objective;?>" />
 <br><br>
 				<label><h5>Steps</h5></label>
-				<textarea style="color:#000000; width:845px;" readonly><?php echo $steps;?></textarea>
-
+				<textarea id="steps" readonly><?php echo $steps;?></textarea>
 				<input type="hidden" value="<?php echo $synopsis_url?>" name="synopsis_url">
 				<input type="hidden" value="<?php echo $synopsis_id;?>" name="synopsis_id">
 				<input type="hidden" value="<?php echo $assignment_id;?>" name="assignment_id">
@@ -82,9 +81,9 @@
 			</form>
         </div>
 	</div>
-<div id="getlost">
-	<?php //$this->load->view('/components/footer') ?>
+<div id="x">
+	<?php $this->load->view('/components/footer') ?>
 </div>
-    <?php //$this->load->view('/components/js_includes') ?>
+    <?php $this->load->view('/components/js_includes') ?>
 </body>
 </html>

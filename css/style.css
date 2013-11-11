@@ -108,13 +108,16 @@ input {
 	color:#555;
 }
 
-#minifooter a{
-	font-size:12px;
-	color:#05f;
+#ablitica {
+	color:#000000;
 }
 
 #scanner_data {
 	width:100%;
+}
+
+.scanner_cell {
+	border-bottom: 1px dashed #d8d8d8;
 }
 
 #scanner_data th{
@@ -123,4 +126,13 @@ input {
 
 #assignment_header {
 	border-bottom: 1px solid #d8d8d8;
+}
+
+#objective {
+	color:#000000;
+	width:845px;
+}
+
+#steps {
+	color:#000000; width:845px;
 }
