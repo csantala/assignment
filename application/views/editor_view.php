@@ -50,19 +50,21 @@
 
         <div class="innerLR innerT">
         		<p>
-        			<div style="position:relative;float:left; width:50%"><?php echo date('F j, Y', time()); ?></div>
-        			<div style="float:left; width:50%; text-align: right;">
-        			<?php echo $student_name; ?>
+        			<div id="date">
+        				<?php echo date('F j, Y', time()); ?>
+        			</div>
+        			<div id="student_name">
+        				<span>Student Name:</span> <?php echo $student_name; ?>
         			</div>
         		</p>
 				<div style="clear:both"></div>
 				<br /><br />
 				<br />
 				<label><h5>Objective</h5></label>
-				<input style="color:#000000;width:845px;" type="text" readonly value="<?php echo $objective;?>" />
+				<input class="objective" type="text" readonly value="<?php echo $objective;?>" />
 <br><br>
-				<label><h5>Steps</h5></label>
-				<textarea style="color:#000000;width:845px;" readonly><?php echo $steps;?></textarea>
+				<label><h5>notes</h5></label>
+				<textarea class="steps" readonly><?php echo $steps;?></textarea>
 		        <span class="details pull-right">
 		        	<?php echo date('F j/y', $date) ?>, elapsed time: <span id="elapsed_time"></span>
 		        	&nbsp;&bull;&nbsp;
@@ -71,7 +73,7 @@
 
 		        <div class="row-fluid">
 		            <form id="synopsis">
-		                <div id="rows" style="min-height:500px;background-image:url('images/bg3.jpg');" data-assignment_id="<?php echo $assignment_hash?>"  data-project_id="<?php echo $project_id?>" data-session="<?php echo $session?>">
+		                <div id="rows" data-assignment_id="<?php echo $assignment_hash?>"  data-project_id="<?php echo $project_id?>" data-session="<?php echo $session?>">
 		                    <table class="ExcelTable2013">
 		                        <tr style="color:#bbb">
 		                            <th></th>
