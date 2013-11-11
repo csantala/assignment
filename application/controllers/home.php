@@ -13,10 +13,10 @@ class Home extends CI_Controller {
 		$assignment_hash = $this->uri->segment(2);
 		$synopsis_hash = $this->uri->segment(3);
         if ($assignment_hash) {
-			$timezone = $_COOKIE['timezone'];
+
 			$assignment = $this->Objectives_model->get_assignment($assignment_hash);
 
-			$student_name = $this->Synopsis_model->get_student($synopsis_hash);
+			$student_meta = $this->Synopsis_model->get_student($synopsis_hash);
 
         	$rows = $this->Task_model->tasks($synopsis_hash);
 			// create new synopses if !$rows
@@ -38,8 +38,8 @@ class Home extends CI_Controller {
                 'project_id' => $synopsis_hash,
                 'session' => $rows[0]->session,
                 'rows' => $rows,
-                'timezone' => $timezone,
-                'student_name' => $student_name
+                'timezone' => $student_meta->timezone,
+                'student_name' => $student_meta->student_name
             );
             $this->load->view('editor_view', $view_data);
         } else {

@@ -41,12 +41,7 @@ class Synopsis_model extends CI_Model {
 		}
 	}
 
-	public function label_synopsis() {
-		$data = array(
-			'student_name' => $_POST['student_name'],
-			'synopsis_id' => $_POST['synopsis_id'],
-			'assignment_id' => $_POST['assignment_id']
-		);
+	public function label_synopsis($data) {
 		$this->db->insert('synopsis', $data);
 	}
 
@@ -54,7 +49,7 @@ class Synopsis_model extends CI_Model {
 		$this->db->where('synopsis_id', $synopsis_id);
 		$query = $this->db->get('synopsis');
 		$data = $query->result();
-		return $data[0]->student_name;
+		return $data[0];
 	}
 
 	public function new_synopsis($project_id, $session, $synopsis = null) {
