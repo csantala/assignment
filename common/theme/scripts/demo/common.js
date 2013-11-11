@@ -228,7 +228,7 @@ $(function()
     .find("a:first").append(" &raquo; ");
 
 	// tooltips
-	//$('[data-toggle="tooltip"]').tooltip();
+	$('[data-toggle="tooltip"]').tooltip();
 
 	// popovers
 	$('[data-toggle="popover"]').popover();
@@ -375,14 +375,9 @@ $(function()
 	{
 		var menu_max_height = parseInt($('#menu .slim-scroll').attr('data-scroll-height'));
 		var menu_real_max_height = parseInt($('#wrapper').height());
-		$('#menu .slim-scroll').slimScroll({
-			height: (menu_max_height < menu_real_max_height ? (menu_real_max_height - 40) : menu_max_height) + "px",
-			allowPageScroll : true,
-			railDraggable: ($.fn.draggable ? true : false)
-	    });
 
-		if (Modernizr.touch)
-			return;
+
+
 
 		// fixes weird bug when page loads and mouse over the sidebar (can't scroll)
 		$('#menu .slim-scroll').trigger('mouseenter').trigger('mouseleave');

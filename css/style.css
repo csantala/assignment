@@ -119,5 +119,8 @@ input {
 
 #scanner_data th{
 	text-align:left;
+}
 
+#assignment_header {
+	border-bottom: 1px solid #d8d8d8;
 }

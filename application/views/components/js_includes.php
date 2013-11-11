@@ -11,7 +11,7 @@
 	<script src="/common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
 
 	<!-- Common Demo Script -->
-	<!-- script src="/common/theme/scripts/demo/common.js?1369753444"></script -->
+	<script src="/common/theme/scripts/demo/common.js?1369753444"></script>
 
 	<!-- Holder Plugin -->
 	<script src="/common/theme/scripts/plugins/other/holder/holder.js"></script>

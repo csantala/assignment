@@ -8,6 +8,7 @@
 	<title>Dashboard</title>
     <!-- Meta -->
     <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="30">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -24,10 +25,10 @@
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
 
-	<script type="application/javascript" src="js/wysihtml5-0.3.0_rc2.js" ></script>
-	<script type="application/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<script type="application/javascript" src="js/bootstrap.min.js"></script>
-	<script type="application/javascript" src="js/bootstrap-wysihtml5.js"></script>
+	<script type="application/javascript" src="/js/wysihtml5-0.3.0_rc2.js" ></script>
+	<script type="application/javascript" src="/js/jquery-1.7.1.min.js"></script>
+	<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="application/javascript" src="/js/bootstrap-wysihtml5.js"></script>
 
     <!-- Glyphicons Font Icons -->
     <link href="/common/theme/css/glyphicons.css" rel="stylesheet" />
@@ -48,9 +49,12 @@
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 </head>
 <body class="" style="padding:100px">
+	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a></h3>
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
+        				<label><h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Email or Text this URL to your students.">?</a></h5></label>
+			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
         	<?php if (! empty($scanner_data)) { ?>
         	<table id="scanner_data">
 				<th>Student</th>
@@ -75,14 +79,16 @@
 			<br /><br />
 			<label><h5>Steps</h5></label>
 			<textarea rows="5" id="steps" name="steps"  style="color:#000"  class="span9" readonly><?php echo $steps;?></textarea>
-			<br /><br />
-			<label><h5>Assignment URL</h5></label>
-			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
         </div>
 	</div>
+	<br>
+	<hr>
 <div id="getlost">
-	<?php //$this->load->view('/components/footer') ?>
+	<?php $this->load->view('/components/footer') ?>
 </div>
-    <?php $this->load->view('/components/js_includes'); ?>
+
+<script src="/common/bootstrap/js/bootstrap.min.js"></script>
+<script src="/common/theme/scripts/demo/common.js?1384198042"></script>
+
 </body>
 </html>

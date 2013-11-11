@@ -20,13 +20,15 @@
     <link href="/common/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
 
+
+
   	<!-- Bootstrap Extended -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
-	<script src="js/wysihtml5-0.3.0_rc2.js"></script>
-	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-wysihtml5.js"></script>
+	<script src="/js/wysihtml5-0.3.0_rc2.js"></script>
+	<script src="/js/jquery-1.7.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-wysihtml5.js"></script>
 
     <!-- Glyphicons Font Icons -->
     <link href="/common/theme/css/glyphicons.css" rel="stylesheet" />
@@ -52,6 +54,7 @@
 	<script type="text/javascript" src="/js/jquery-validate.js"></script>
 	<script type="text/javascript">
 $(document).ready(function () {
+	$('#objective').focus();
 	$('#submit').click(function() {
  		$('#assignment_form').submit();
 	});
@@ -73,25 +76,37 @@ $(document).ready(function () {
 	</script>
 </head>
 <body class="" style="padding:100px">
+	<h3 id="assignment_header">Create An Assignment</h3>
+
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
+<br>
         	<form id="assignment_form" action="/create" method="post">
-				<label for="objective"><h5>Objective</h5></label>
-				<input class="span9" type="text" name="objective" id="objective" style="color:#000">
+				<label for="objective"><h5>Objective&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Specify the objective of the assignment here.">?</a></h5></label>
+				<input tabindex="1" class="span9" type="text" name="objective" id="objective" style="color:#000" >
 				<br /><br />
-				<label for="steps"><h5>Steps</h5></label>
-				<textarea rows="5" id="steps" name="steps" style="color:#000" class="span9"></textarea>
-				<label for="teacher_email"><h5>Email</h5></label>
-				<input type="text" name="teacher_email" id="teacher_email" style="color:#000">
-				<br /><br />
-				<p><a type="submit" id="submit" class="btn btn-icon btn-primary glyphicons parents"><i></i>Create Assignment</a></p>
+				<label for="steps"><h5>Notes&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Explanation of the Objective.">?</a></h5></label>
+				<textarea tabindex="2" rows="5" id="steps" name="steps" style="color:#000" class="span9"></textarea>
+				<label for="teacher_email"><h5>Email&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Receive notifications from the dashboard when a student has submitted a report. Email address is not required.">?</a></h5></label>
+				<input tabindex="3 type="text" name="teacher_email" id="teacher_email" style="color:#000">
+				<br /><br /><br>
+				<p><a tabindex="4" type="submit" id="submit" class="btn btn-icon btn-primary glyphicons parents"><i></i>Create Assignment</a></p>
 			</form>
         </div>
 	</div>
+		<br>
+	<hr>
 <div id="getlost">
-	<?php //$this->load->view('/components/footer') ?>
+	<?php $this->load->view('/components/footer') ?>
 </div>
-    <?php //$this->load->view('/components/js_includes') ?>
+
+
+<!-- Bootstrap -->
+<script src="/common/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Common Demo Script -->
+<script src="/common/theme/scripts/demo/common.js?1384198042"></script>
+
 </body>
 </html>
