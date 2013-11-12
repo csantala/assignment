@@ -67,7 +67,7 @@
 	                    ?>
 	                    <tr>
 	                        <td><?php echo date("g:i:a", $task->time);?></td>
-	                        <td class="comment" style="color:#111"><?php echo $task->task?></td>
+	                        <td class="task" data-task_id="<?php echo $task->id;?>" style="color:#111"><?php echo $task->task?><span class="comment<?php echo $task->id;?>"><span></td>
 	                    </tr>
 	                <?php } ?>
 	                </tbody>
@@ -84,8 +84,6 @@
 <br />
 <?php //$this->load->view('/components/footer') ?>
 </div>
-
-
 	<?php $this->load->view('/components/js_includes') ?>
 
 </body>
