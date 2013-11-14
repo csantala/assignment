@@ -101,7 +101,6 @@ $(document).ready(function () {
 	<?php $this->load->view('/components/footer') ?>
 </div>
 
-
 <!-- Bootstrap -->
 <script src="/common/bootstrap/js/bootstrap.min.js"></script>
 

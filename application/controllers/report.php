@@ -9,7 +9,8 @@ class Report extends CI_Controller {
             // retreive report by hash
             $report = $this->Report_model->retrieve_report($hash);
             // retreive synopsis for this report
-            $synopsis = $this->Synopsis_model->synopsis($report->project_id);
+            $synopsis = $this->Synopsis_model->synopsis2($report->project_id);
+			ds($synopsis);
 		//	$objective = $this->Objectives_model->get_objective($report->project_id);
 			$assignment = $this->Objectives_model->get_assignment($report->assignment_hash);
 

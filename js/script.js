@@ -7,17 +7,16 @@ $(document).ready(function() {
                 task_id: task_id
         });
     });
- //$(this).closest('TR').after('<tr><td></td><td><input type="text" class="foo" autofocus/></td></tr>');
+
     // submit comment
-    $(".foo").keydown(function(e) {
-        alert('hello there!');
-       // var objective = $("input").val();
-       // var project_id =  $(this).find('input[type="hidden"][name="project_id"]').val();
+    $(".comment").keydown(function(e) {
+        var task_id = $(this).data("task_id");
+        var comment = $('#comment' + task_id).val();
         if (e.keyCode == 13) {
              e.preventDefault();
-             $(".edit_objective").load("/home/update_objective",{
-                objective:objective,
-                project_id: project_id
+             $(".comment" + task_id).load("/comment/update_comment",{
+                task_id:task_id,
+                comment:comment
              });
         }
     });

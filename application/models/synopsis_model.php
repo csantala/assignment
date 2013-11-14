@@ -21,6 +21,18 @@ class Synopsis_model extends CI_Model {
 		return $data;
 	}
 
+	public function synopsis2($project_id) {
+		$this->db->select('task.id, task.project_id, task.time, task.position, task.task, comments.comment');
+		$this->db->where('project_id', $project_id);
+		$this->db->join('comments', 'comments.task_id = task.id', 'left');
+		$this->db->order_by("position", "asc");
+		$data = $this->db->get('task');
+
+		$data = $data->result();
+
+		return $data;
+	}
+
 	public function update_synopsis() {
 		$data = array(
 			'synopsis_id' => $_POST['project_id'],

@@ -17,24 +17,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
     <!-- Bootstrap -->
-    <link href="../common/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../common/bootstrap/css/responsive.css" rel="stylesheet" />
+    <link href="/common/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
 
     <!-- Glyphicons Font Icons -->
-    <link href="../common/theme/css/glyphicons.css" rel="stylesheet" />
+    <link href="/common/theme/css/glyphicons.css" rel="stylesheet" />
 
     <!-- Uniform Pretty Checkboxes -->
-    <link href="../common/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="/common/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
 
     <!-- Main Theme Stylesheet :: CSS -->
-    <link href="../common/theme/css/style-light.css?1378421746" rel="stylesheet" />
+    <link href="/common/theme/css/style-light.css?1378421746" rel="stylesheet" />
 
     <!--Custom Stylesheet :: CSS -->
     <link href="/css/style.css" rel="stylesheet" />
 
     <!-- LESS.js Library -->
-    <script src="../common/theme/scripts/plugins/system/less.min.js"></script>
+    <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.js"></script>
 </head>
 <body class="">
 
@@ -51,11 +53,10 @@
 			<p> <label for="steps"><h5>Steps</h5></label>
 			    <textarea rows="5"  style="color:#000" id="steps" readonly name="steps" class="span8"><?php echo strip_tags(nl2br($steps)); ?></textarea></p>
 			</form>
-	        <h6><?php echo $date?>&nbsp;&bull;&nbsp;Elapsed time: <?php echo $elapsed_time;?></span></h6>
+	        <h6><?php echo $date?>&nbsp;&bull;&nbsp;Elapsed time: <?php echo $elapsed_time;?></span>Help &nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="click any row on the report below to add comments.">comment</a></h6>
 
 	        <!-- Row -->
 	        <div class="row-fluid row-merge widget">
-
 	            <table class="dynamicTable table table-striped table-bordered table-condensed dataTable span12">
 	                <thead>
 	                    <th class="report_clock">clock</th>
@@ -67,7 +68,9 @@
 	                    ?>
 	                    <tr>
 	                        <td><?php echo date("g:i:a", $task->time);?></td>
-	                        <td class="task" data-task_id="<?php echo $task->id;?>" style="color:#111"><?php echo $task->task?><span class="comment<?php echo $task->id;?>"><span></td>
+	                        <td class="task" data-task_id="<?php echo $task->id;?>" style="color:#111"><?php echo $task->task?>
+	                        <?php if (isset($task->comment)) { echo "<br>&nbsp;" . $task->comment; } ?>
+	                        <span class="comment<?php echo $task->id;?>"><span></td>
 	                    </tr>
 	                <?php } ?>
 	                </tbody>
@@ -84,7 +87,35 @@
 <br />
 <?php //$this->load->view('/components/footer') ?>
 </div>
-	<?php $this->load->view('/components/js_includes') ?>
+<!-- Bootstrap -->
+<script src="/common/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Common Demo Script -->
+<script src="/common/theme/scripts/demo/common.js?1384198042"></script>
+	<!-- JQuery -->
+	<script src="/common/theme/scripts/plugins/system/jquery.min.js"></script>
+
+	<!-- Modernizr -->
+	<script src="/common/theme/scripts/plugins/system/modernizr.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="/common/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- SlimScroll Plugin -->
+	<script src="/common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
+
+	<!-- Common Demo Script -->
+	<script src="/common/theme/scripts/demo/common.js?1369753444"></script>
+
+	<!-- Holder Plugin -->
+	<script src="/common/theme/scripts/plugins/other/holder/holder.js"></script>
+
+	<!-- Uniform Forms Plugin -->
+	<script src="/common/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
+
+	<script type="text/javascript" src="/js/jquery.hotkeys.js"></script>
+	<script type="text/javascript" src="/js/moment.min.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
 
 </body>
 </html>
