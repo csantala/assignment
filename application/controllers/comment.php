@@ -6,20 +6,17 @@
 			parent::__construct();
 		}
 
-		public function add_comment() {
-			$this->load->view('components/ajax/comment_editor.php');
-		}
-
-		public function update_comment() {
-			$task_id = $_POST['task_id'];
+		public function add_or_update() {
+			$user = $_POST['user'];
 			$comment = $_POST['comment'];
-			// save comment
-			$this->Comment_model->update_comment();
-
-			$view_data = array(
-				'task_id' => $task_id,
-				'comment' => $comment
+			$comments_container_id = $_POST['comments_container_id'];
+			$data = array(
+				'user' => $user,
+				'comments_container_id' => $comments_container_id,
+				'comment' => $comment,
+				'date' => time()
 			);
-			$this->load->view('components/ajax/updated_comment.php', $view_data);
+			$this->Comment_model->add_update_comment($data);
+			redirect('/report/' . $comments_container_id);
 		}
 	}

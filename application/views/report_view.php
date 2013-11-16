@@ -1,4 +1,3 @@
-<?php  date_default_timezone_set('America/Vancouver'); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
@@ -53,7 +52,7 @@
 			<p> <label for="steps"><h5>Steps</h5></label>
 			    <textarea rows="5"  style="color:#000" id="steps" readonly name="steps" class="span8"><?php echo strip_tags(nl2br($steps)); ?></textarea></p>
 			</form>
-	        <h6><?php echo $date?>&nbsp;&bull;&nbsp;Elapsed time: <?php echo $elapsed_time;?></span>Help &nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="click any row on the report below to add comments.">comment</a></h6>
+	        <h6><?php echo $date?>&nbsp;&bull;&nbsp;Elapsed time: <?php echo $elapsed_time;?></span>&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="The this the student's synopsis with elapsed time from initiation to completion.">?</a></h6>
 
 	        <!-- Row -->
 	        <div class="row-fluid row-merge widget">
@@ -69,13 +68,14 @@
 	                    <tr>
 	                        <td><?php echo date("g:i:a", $task->time);?></td>
 	                        <td class="task" data-task_id="<?php echo $task->id;?>" style="color:#111"><?php echo $task->task?>
-	                        <?php if (isset($task->comment)) { echo "<br>&nbsp;" . $task->comment; } ?>
-	                        <span class="comment<?php echo $task->id;?>"><span></td>
 	                    </tr>
 	                <?php } ?>
 	                </tbody>
 	           </table>
 	        </div>
+	        <?php $this->load->view('/components/comments', array('comments_container_id' => $hash)); ?>
+	        <?php $this->load->view('/components/comment_form', array('comments_container_id' => $hash)); ?>
+	         <span class="comment"><span>
 	        <!-- // Row END -->
 	    </div>
     <!-- // Box END -->

@@ -2,19 +2,13 @@
 
 class Comment_model extends CI_Model {
 
-	public function update_comment() {
+	public function add_update_comment($data) {
 
 		$query = $this->db->get_where('comments', array(
-			'task_id' => $_POST['task_id']
+			'comments_container_id' => $data['comments_container_id']
 		));
-		$data = array(
-			'task_id' => $_POST['task_id'],
-			'user_id' => $this->session->userdata('user_id'),
-//			'branch' => $_POST['session'],
-			'comment' => $_POST['comment'],
-			'date' => time()
-		);
-		// create a new branch if present, otherwise create a new row if unique ($task_id)
+
+		// create a new branch if present, otherwise create a new row if unique ($comments_container_id)
 		$rows = $query->num_rows();
 		if ($rows > 0) {
 			$data['branch'] = $rows;
@@ -22,5 +16,13 @@ class Comment_model extends CI_Model {
 		} else {
 			$this->db->insert('comments', $data);
 		}
+	}
+
+	public function get_comments($comments_container_id) {
+		$this->db->where('comments_container_id', $comments_container_id);
+		$query = $this->db->get('comments');
+		$data = $query->result();
+		if (! empty($data)) { return $data; }
+		return null;
 	}
 }
