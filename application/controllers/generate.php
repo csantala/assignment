@@ -24,8 +24,8 @@ class Generate extends CI_Controller {
 		 } else {
 		 	$elapsed_time = 0;
 		 }
-
-		$timezone = $_COOKIE['timezone'];
+		// TODO: fix this
+		$timezone = isset($_COOKIE['timezone']) ? $_COOKIE['timezone'] : 'America/Vancouver';
         // create report for project_id
         $data = compact('project_id', 'elapsed_time', 'project_id', 'timezone', 'asshash', 'student_name');
         $this->Report_model->create_report($data);

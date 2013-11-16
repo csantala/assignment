@@ -20,8 +20,6 @@
     <link href="/common/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
 
-
-
   	<!-- Bootstrap Extended -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>

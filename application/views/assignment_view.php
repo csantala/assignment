@@ -84,6 +84,6 @@ $(document).ready(function() {
 <div id="x">
 	<?php $this->load->view('/components/footer') ?>
 </div>
-    <?php $this->load->view('/components/js_includes') ?>
+ <?php // $this->load->view('/components/js_includes') ?>
 </body>
 </html>

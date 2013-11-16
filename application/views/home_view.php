@@ -5,7 +5,7 @@
 <script>
 	$(document).ready(function() {
 		var timezone = jstz.determine();
-		$.cookie('timezone', timezone.name());
+		$.cookie('timezone', timezone.name()); alert(timezone.name());
 		window.location.href = 'http://' + window.location.hostname + '/<?php echo $assignment_hash?>';
 	});
 </script>
