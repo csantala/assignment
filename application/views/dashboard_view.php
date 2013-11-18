@@ -53,18 +53,19 @@
 </head>
 <body class="" style="padding:100px">
 	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">bookmark this page</a></h3>
-     <!-- Content -->
-    <div id="contentx">
-        <div class="innerLR innerT">
+<br>
         	<label><h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Email or Text this URL to your students.">?</a></h5></label>
-			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p><br>
-			<label><h5>Objective</h5></label>
+			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
+			<p>
+			<label><h5>OBJECTIVE</h5></label>
 			<input id="objective" class="span9" type="text" name="objective" value="<?php echo $objective;?>" readonly>
-			<br /><br />
-			<label><h5>Steps</h5></label>
+		</p><p>
+			<label><h5>NOTES</h5></label>
 			<textarea id="steps" rows="5" id="steps" name="steps" readonly><?php echo $steps;?></textarea>
-			<br><br>
-			<h4>Progress&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="As students work on and complete their assignment, their progress will appear in this space.">?</a></h4>
+		</p>
+		<p>
+			<h4 id="progress">Progress&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="As students work on and complete their assignment, their progress will appear in this space.">?</a></h4>
+
 			  <table id="scanner_data">
 				<th>Student</th>
 				<th>Elapsed Time</th>
@@ -90,9 +91,7 @@
 					<?php } ?>
 			<?php } ?>
 			</table>
-        </div>
-	</div>
-	<br>
+	</p>
 	<hr>
 <div id="getlost">
 	<?php $this->load->view('/components/footer') ?>

@@ -18,7 +18,9 @@
     <!-- Bootstrap -->
     <link href="/common/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
-
+	<!-- Bootstrap Extended -->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
     <!-- Glyphicons Font Icons -->
     <link href="/common/theme/css/glyphicons.css" rel="stylesheet" />
 
@@ -37,21 +39,24 @@
     <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/js/jquery-ui.js"></script>
 </head>
-<body class="">
+<body class="" style="padding:100px">
 
-<!-- Wrapper -->
-<div id="login">
+	   	<h3 id="assignment_header">Assignment Synopsis Report&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="Bookmark this page to return to it at any time in order to complete the assignment in multiple sessions.">bookmark this page</a></h3>
+<br>
+        	<form id="begin" action="/create/begin" method="post">
 
-    <div class="container">
-    <!-- Box -->
-	   <div class="innerLR innerT">
-	   	<h4>Submitted by: <span style="color:#000"> <?php echo $student_name?></span></h4><br>
-	   	<form>
-	       <label for="objective"><h5>Objective</h5></label>
-			<input class="span8" style="color:#000" type="text" name="objective" value="<?php echo $objective;?>" readonly>
-			<p> <label for="steps"><h5>Steps</h5></label>
-			    <textarea rows="5"  style="color:#000" id="steps" readonly name="steps" class="span8"><?php echo strip_tags(nl2br($steps)); ?></textarea></p>
-			</form>
+        		<p>
+        			STUDENT: <input id="student_name" value="<?php echo $student_name; ?>" name="student_name" class="span3" type="text" readonly style="color:#000000" />
+        		</p>
+<p>
+				<label><h5>OBJECTIVE</h5></label>
+				<input id="objective" type="text" readonly value="<?php echo $objective;?>" />
+</p>
+<p>
+				<label><h5>NOTES</h5></label>
+				<textarea id="steps" readonly><?php echo $steps;?></textarea>
+</p>
+				</form>
 	        <h6><?php echo $date?>&nbsp;&bull;&nbsp;Elapsed time: <?php echo $elapsed_time;?></span>&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="The this the student's synopsis with elapsed time from initiation to completion.">?</a></h6>
 
 	        <!-- Row -->
@@ -76,11 +81,7 @@
 	        <?php $this->load->view('/components/comments', array('comments_container_id' => $hash)); ?>
 	        <?php $this->load->view('/components/comment_form', array('comments_container_id' => $hash)); ?>
 	         <span class="comment"><span>
-	        <!-- // Row END -->
-	    </div>
-    <!-- // Box END -->
-    </div>
-</div>
+
 
 <div class="clearfix"></div>
 <!-- // Sidebar menu & content wrapper END -->

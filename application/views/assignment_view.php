@@ -57,31 +57,32 @@ $(document).ready(function() {
 	</script>
 </head>
 <body class="" style="padding:100px">
-	<h3 id="assignment_header">Assignment	&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a></h3>
-     <!-- Content -->
-    <div id="contentx">
-        <div class="innerLR innerT">
+
+	<h3 id="assignment_header">Assignment	&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Enter your name then click the Begin button.">?</a></h3>
+<br>
         	<form id="begin" action="/create/begin" method="post">
         		<p>
-        			Student Name:  <input id="student_name" name="student_name" class="span3" type="text" style="color:#000000" />
+        			STUDENT NAME:  <input id="student_name" name="student_name" class="span3" type="text" style="color:#000000" />
         		</p>
-				<label><h5>Objective</h5></label>
+        		<p>
+				<label><h5>OBJECTIVE</h5></label>
 				<input id="objective" type="text" readonly value="<?php echo $objective;?>" />
-<br><br>
-				<label><h5>Steps</h5></label>
+				</p>
+				<p>
+				<label><h5>NOTES</h5></label>
 				<textarea id="steps" readonly><?php echo $steps;?></textarea>
+				</p>
 				<input type="hidden" value="<?php echo $synopsis_url?>" name="synopsis_url">
 				<input type="hidden" value="<?php echo $synopsis_id;?>" name="synopsis_id">
 				<input type="hidden" value="<?php echo $assignment_id;?>" name="assignment_id">
-			<br><br>
-				<p><button type="submit" class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i>Begin</button></p>
+							<p><button type="submit" class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i>Begin</button></p>
 			</form>
-        </div>
-	</div>
+
+	<hr>
 <div id="x">
-	<?php $this->load->view('/components/footer') ?>
+	<?php //$this->load->view('/components/footer') ?>
 </div>
- <?php // $this->load->view('/components/js_includes') ?>
+ <?php  $this->load->view('/components/js_includes') ?>
  <script src="/common/bootstrap/js/bootstrap.min.js"></script>
 <script src="/common/theme/scripts/demo/common.js?1384198042"></script>
 </body>

@@ -75,24 +75,20 @@ $(document).ready(function () {
 </head>
 <body class="" style="padding:100px">
 	<h3 id="assignment_header">Create An Assignment</h3>
+	<br>
 
-     <!-- Content -->
-    <div id="contentx">
-        <div class="innerLR innerT">
-<br>
         	<form id="assignment_form" action="/create" method="post">
-				<label for="objective"><h5>Objective&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Specify the objective of the assignment here.">?</a></h5></label>
+				<label for="objective"><h5>OBJECTIVE&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Specify the objective of the assignment here.">?</a></h5></label>
 				<input tabindex="1" class="span9" type="text" name="objective" id="objective" style="color:#000" >
 				<br /><br />
-				<label for="steps"><h5>Notes&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Explanation of the Objective.">?</a></h5></label>
+				<label for="steps"><h5>NOTES&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Explanation of the Objective.">?</a></h5></label>
 				<textarea tabindex="2" rows="5" id="steps" name="steps" style="color:#000" class="span9"></textarea>
-				<label for="teacher_email"><h5>Email&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Receive notifications from the dashboard when a student has submitted a report. Email address is not required.">?</a></h5></label>
+				<label for="teacher_email"><h5>EMAIL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Receive notifications from the dashboard when a student has submitted a report. Email address is not required.">?</a></h5></label>
 				<input tabindex="3" type="text" name="teacher_email" id="teacher_email" style="color:#000">
-				<br /><br /><br>
+				<br /><br />
 				<p><a tabindex="4" type="submit" id="submit" class="btn btn-icon btn-primary glyphicons parents"><i></i>Create Assignment</a></p>
 			</form>
-        </div>
-	</div>
+
 		<br>
 	<hr>
 <div id="getlost">
