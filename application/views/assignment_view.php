@@ -52,22 +52,19 @@
 $(document).ready(function() {
 	var timezone = jstz.determine();
 	$.cookie('timezone', timezone.name());
+	$("#student_name").focus();
 });
 	</script>
 </head>
 <body class="" style="padding:100px">
+	<h3 id="assignment_header">Assignment	&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a></h3>
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">
         	<form id="begin" action="/create/begin" method="post">
         		<p>
-        			<div style="position:relative;top:5px;float:left; width:50%"><?php echo date('F j, Y', time()); ?></div>
-        			<div style="float:left; width:50%; text-align: right;">
         			Student Name:  <input id="student_name" name="student_name" class="span3" type="text" style="color:#000000" />
-        			</div>
         		</p>
-				<div style="clear:both"></div>
-				<br />
 				<label><h5>Objective</h5></label>
 				<input id="objective" type="text" readonly value="<?php echo $objective;?>" />
 <br><br>
@@ -85,5 +82,7 @@ $(document).ready(function() {
 	<?php $this->load->view('/components/footer') ?>
 </div>
  <?php // $this->load->view('/components/js_includes') ?>
+ <script src="/common/bootstrap/js/bootstrap.min.js"></script>
+<script src="/common/theme/scripts/demo/common.js?1384198042"></script>
 </body>
 </html>

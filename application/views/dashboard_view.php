@@ -47,9 +47,12 @@
 
     <!-- LESS.js Library -->
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
+
+    <script src="/js/bookmark.js"></script>
+
 </head>
 <body class="" style="padding:100px">
-	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a></h3>
+	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">bookmark this page</a></h3>
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">

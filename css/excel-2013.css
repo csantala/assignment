@@ -80,15 +80,14 @@
 
 #student_name {
 	color:#000000;
-	float:left;
-	width:50%;
-	text-align: right;
+
 }
 
 
 #student_name span {
 	color:#7c7c7c;
-	font-weight:600;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 13px;
 }
 
 #done {

@@ -7,9 +7,6 @@
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
 	<title>Synopses Generator</title>
-	<meta name="description" content="What is Snopzmini? How will it help me? Why would I want to record the steps I take to do something? Is this a security risk?">
-	<meta name="author" content="Ablitica">
-	<meta name="keywords" content="what is snopzmini.com, synopses generator, development, objectives, foo">
 
     <!-- Meta -->
     <meta charset="UTF-8" />
@@ -20,11 +17,13 @@
 
     <!-- Excel-like css -->
     <link href="/css/excel-2013.css" rel="stylesheet" type="text/css" />
-
+    <link href="/css/excel-2007.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap -->
     <link href="/common/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
-
+<!-- Bootstrap Extended -->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
     <!-- Glyphicons Font Icons -->
     <link href="/common/theme/css/glyphicons.css" rel="stylesheet" />
 
@@ -40,38 +39,23 @@
     <!-- General css -->
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
-
     <!-- LESS.js Library -->
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 
-
 </head>
 <body class="" style="padding:100px">
-
+		<h3 id="assignment_header">Assignment Synopsis&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">bookmark this page</a></h3>
         <div class="innerLR innerT">
-        		<div id="done">
-        			<a class="btn primary confirm" href="/generate/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">SUBMIT ASSIGNMENT</a>
-        		</div>
-        		<div style="clear:both"></div>
-        		<p>
-        			<div id="date">
-        				<?php echo date('F j, Y', time()); ?>
-        			</div>
-        			<div id="student_name">
-        				<span>Student Name:</span> <?php echo $student_name; ?>
-        			</div>
-        		</p>
-				<div style="clear:both"></div>
-				<br />
-				<br />
-				<br />
+			<form id="begin" action="/create/begin" method="post">
+        		<label><h5>Student Name</h5></label>
+        		<input id="student_name" name="student_name" class="span3" type="text" style="color:#000000" readonly value="<?php echo $student_name; ?>">
+        		<br><br>
 				<label><h5>Objective</h5></label>
 				<input class="objective" type="text" readonly value="<?php echo $objective;?>" />
-<br><br>
+				<br><br>
 				<label><h5>notes</h5></label>
 				<textarea class="steps" readonly><?php echo $steps;?></textarea>
-
-
+				</form>
 		        <div class="row-fluid">
 		            <form id="synopsis">
 		                <div id="rows" data-assignment_id="<?php echo $assignment_hash?>"  data-project_id="<?php echo $project_id?>" data-session="<?php echo $session?>">
@@ -114,10 +98,13 @@
 		                    </table>
 		                </div>
 		            </form>
-
+        	<p>
+        		<div id="done">
+        			<a class="btn primary confirm" href="/generate/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">SUBMIT ASSIGNMENT</a>
+        		</div>
+        	</p>
 		        </div>
 	        </div>
-
 
 <div id="getlost">
         <?php // $this->load->view('/components/footer') ?>
@@ -125,6 +112,9 @@
 
     <?php $this->load->view('/components/themer') ?>
     <?php $this->load->view('/components/js_includes') ?>
+      <script src="/common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/bookmark.js"></script>
+    <script src="/common/theme/scripts/demo/common.js?1384198042"></script>
 
 </body>
 </html>
