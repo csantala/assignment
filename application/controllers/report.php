@@ -39,7 +39,7 @@ class Report extends CI_Controller {
                 'hash' => $hash,
                 'report_url' => $report_url,
                 'report_url_length' => $report_url_length,
-                'timezone' => $_COOKIE['timezone'],
+                'timezone' => $report->timezone,
                 'comments' => $comments
             );
            $this->load->view('report_view', $data);

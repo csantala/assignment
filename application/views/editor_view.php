@@ -6,7 +6,7 @@
 <!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
-	<title>Synopses Generator</title>
+	<title>Synopsis</title>
 
     <!-- Meta -->
     <meta charset="UTF-8" />

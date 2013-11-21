@@ -1,4 +1,5 @@
 <?php
+	date_default_timezone_set($timezone);
 	$et_tip = "The this the student's synopsis with elapsed time from initiation to completion.";
 ?>
 <!DOCTYPE html>

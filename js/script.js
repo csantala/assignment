@@ -39,7 +39,7 @@ $(document).ready(function() {
             if($(this).val() != '' && n != 0) { validated = true; }
             if(n > 0) { validated = true; }
         });
-       if(! validated) { alert('Synopsis cannot be blank prior to submission'); $('.task').focus(); return false;}
+       if(! validated) { alert('Please do not submit a blank synopsis.'); $('.task').focus(); return false;}
        var name = confirm('Submit this synopsis to your instructor?');
         if (name == false) { return false; }
         else {
