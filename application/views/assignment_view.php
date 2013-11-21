@@ -62,20 +62,20 @@ $(document).ready(function() {
 <br>
         	<form id="begin" action="/create/begin" method="post">
         		<p>
-        			STUDENT NAME:  <input id="student_name" name="student_name" class="span3" type="text" style="color:#000000" />
+        			STUDENT NAME:  <input tabindex="1" id="student_name" name="student_name" class="span3" type="text" style="color:#000000" />
         		</p>
         		<p>
 				<label><h5>OBJECTIVE</h5></label>
-				<input id="objective" type="text" readonly value="<?php echo $objective;?>" />
+				<input id="objective" tabindex="3" type="text" readonly value="<?php echo $objective;?>" />
 				</p>
 				<p>
 				<label><h5>NOTES</h5></label>
-				<textarea id="steps" readonly><?php echo $steps;?></textarea>
+				<textarea id="steps" tabindex="4" readonly><?php echo $steps;?></textarea>
 				</p>
 				<input type="hidden" value="<?php echo $synopsis_url?>" name="synopsis_url">
 				<input type="hidden" value="<?php echo $synopsis_id;?>" name="synopsis_id">
 				<input type="hidden" value="<?php echo $assignment_id;?>" name="assignment_id">
-							<p><button type="submit" class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i>Begin</button></p>
+				<p><button type="submit" tabindex="2" class="btn btn-icon btn-primary glyphicons lightbulb" type="submit" value="Assign"><i></i>Begin</button></p>
 			</form>
 
 	<hr>

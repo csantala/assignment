@@ -143,9 +143,17 @@ input {
     width:99%;
 }
 
+.comments {
+	margin-top: 30px;
+	border-top: 2px solid #d8d8d8;
+	padding:0px 10px 10px 0px;
+	font-weight:bold;
+
+}
 
 .comment_name {
 	color:#369;
+
 }
 
 .comment_comment {

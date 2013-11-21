@@ -46,7 +46,7 @@
 
 </head>
 <body class="" style="padding:100px">
-		<h3 id="assignment_header">Assignment Synopsis&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Log each step taken to complete the assignment with the editor below.  Use a new line for each step.   When complete, click the 'SUBMIT ASSIGNMENT' button.">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="Bookmark this page to return to it at any time in order to complete the assignment in multiple sessions.">bookmark this page</a></h3>
+		<h3 id="assignment_header">Synopsis&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Log each step taken to complete the assignment with the editor below.  Use a new line for each step.   When complete, click the 'SUBMIT ASSIGNMENT' button.">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="Bookmark this page to return to it at any time in order to complete the assignment in multiple sessions.">bookmark this page</a></h3>
 		<br>
         	<form id="begin" action="/create/begin" method="post">
         		<p>
@@ -81,7 +81,7 @@
 		                                            <span data-time="<?php echo $row->time ?>"><?php echo date('g:i a', $row->time);?></span>
 		                                        </td>
 		                                        <td>
-		                                            <input class="task" type="text" data-i="<?php echo $row->position; ?>" <?php if ($row->task != '') { ?> value="<?php echo $row->task; ?>"<?php } ?>/>
+		                                            <input maxlength="300" class="task" type="text" data-i="<?php echo $row->position; ?>" <?php if ($row->task != '') { ?> value="<?php echo $row->task; ?>"<?php } ?>/>
 		                                        </td>
 		                                    </tr>
 		                            <?php } ?>
@@ -105,12 +105,10 @@
 		            </form>
         	<p>
         		<div id="done">
-        			<a class="btn primary confirm" href="/generate/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">SUBMIT ASSIGNMENT</a>
+        			<a class="btn primary confirm" href="/generate/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">SUBMIT SYNOPSIS</a>
         		</div>
         	</p>
 		        </div>
-
-
 <div id="getlost">
         <?php // $this->load->view('/components/footer') ?>
 </div>

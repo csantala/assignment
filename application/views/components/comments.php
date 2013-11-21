@@ -1,3 +1,6 @@
+<div class="comments">
+Comments
+</div>
 <?php
  if(! empty($comments)) {
 	foreach ($comments as $comment) {?>

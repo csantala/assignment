@@ -79,13 +79,13 @@
 				<th>Report</th>
 				<?php
 					if (! empty($scanner_data)) {
-						foreach($scanner_data as $data) { ?>
+						foreach($scanner_data as $data) { //ds($data,1);?>
 				<tr>
 					<td><?php echo $data->student_name;?></td>
 					<td><?php echo $data->elapsed_time;?></td>
-					<td><?php echo 'synopses';?></td>
+					<td><a href="/home/<?php echo $data->assignment_id;?>/<?php echo $data->synopsis_id;?>">synopsis</a></td>
 					<td><?php echo $data->status;?></td>
-					<td><?php if (isset($data->report_url)) { ?><a href="<?php echo $data->report_url;?>">Report</a><?php } ?></td>
+					<td><?php if ($data->report_url != '') { ?><a href="<?php echo $data->report_url;?>">Report</a><?php } else { echo "-----"; }?></td>
 				</tr>
 				<?php } ?>
 			<?php } else { ?>

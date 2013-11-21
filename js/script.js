@@ -34,7 +34,13 @@ $(document).ready(function() {
 
     // send
     $('.confirm').click(function(){
-       var name = confirm('Submit this report to your instructor?');
+        var validated = false;
+        $('#synopsis input').each(function(n, e){
+            if($(this).val() != '' && n != 0) { validated = true; }
+            if(n > 0) { validated = true; }
+        });
+       if(! validated) { alert('Synopsis cannot be blank prior to submission'); $('.task').focus(); return false;}
+       var name = confirm('Submit this synopsis to your instructor?');
         if (name == false) { return false; }
         else {
             var hash = $('#rows').data("project_id");
@@ -93,7 +99,7 @@ $(document).ready(function() {
             // deactivated
             case 000192:
                 e.preventDefault();
-                $('<tr class="rowx"><td class="heading"></td><td class="start"><span data-time="'+ moment().format('X') + '">' + moment().format('h:mm a') + '</span></td><td><input class="task" type="text" /></td></tr>').insertBefore($(this));
+                $('<tr class="rowx"><td class="heading"></td><td class="start"><span data-time="'+ moment().format('X') + '">' + moment().format('h:mm a') + '</span></td><td><input maxlength="300" class="task" type="text" /></td></tr>').insertBefore($(this));
                 update_inputs();
                 var time = $(this).find('span').data("time");
                 write_task('/synopsis/insert_task', i, project_id, session, '', time);
@@ -124,7 +130,7 @@ $(document).ready(function() {
                 e.preventDefault();
                 var next = i + 1;
                 if ($(this).next('tr').find('input:text').length == 0) {
-                    $('<tr class="rowx"><td class="heading">' + next + '</td><td class="start"><span data-time="'+ moment().format('X') + '">' + moment().format('h:mm a') + '</span></td><td><input class="task" type="text" data-i="' + next + '" /></td></tr>').insertAfter($(this));
+                    $('<tr class="rowx"><td class="heading">' + next + '</td><td class="start"><span data-time="'+ moment().format('X') + '">' + moment().format('h:mm a') + '</span></td><td><input maxlength="300" class="task" type="text" data-i="' + next + '" /></td></tr>').insertAfter($(this));
                 }
                 var task = $(this).find('input:text').val();
                 var time = moment().format('X');
