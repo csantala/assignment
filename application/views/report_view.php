@@ -1,6 +1,8 @@
 <?php
 	date_default_timezone_set($timezone);
+	$report_tip = "This is the completed synopsis. Both the student and the instructor may comment on this page - bookmark this page to see new comments.";
 	$et_tip = "The this the student's synopsis with elapsed time from initiation to completion.";
+	$continue_tip = "Synopsis incomplete? Click the link to continue and then resubmit";
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -56,7 +58,7 @@
 </head>
 
 <body class="" style="padding:100px">
-	   	<h3 id="assignment_header">Synopsis Report</h3><br>
+	   	<h3 id="assignment_header">Synopsis Report&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $report_tip;?>">?</a></h3><br>
         	<form id="begin" action="/create/begin" method="post">
 
         		<p>
@@ -91,7 +93,9 @@
 	                <?php } ?>
 	                </tbody>
 	           </table>
-	        </div>
+	           <a href="/home/<?php echo $assignment_id;?>/<?php echo $synopsis_id;?>">continue synopsis</a>&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $continue_tip;?>">?</a>
+
+	          </div>
 	        <?php $this->load->view('/components/comments', array('comments_container_id' => $hash)); ?>
 	        <?php $this->load->view('/components/comment_form', array('comments_container_id' => $hash)); ?>
 	         <span class="comment"><span>

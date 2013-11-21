@@ -1,7 +1,7 @@
 <?php
-	$dashboard_tip = "This page will update with student's progress while they complete the assignment. Send the ASSIGNMENT URL to your students.";
+	$dashboard_tip = "This page will update with student's progress while they complete the assignment. Send the ASSIGNMENT URL to your students. Bookmark this page for future reference.";
 	$assignment_tip = "Email or Text this URL to your students.";
-	$progress_tip = "Student progress will appear in this panel.  Click a Report link to view a report of the student's synopsis.";
+	$progress_tip = "Student progress appears in this panel.  Click a Report link to view a report of the student's synopsis. Report links only appear when a student has submitted their completed work.";
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
     <script src="/js/bookmark.js"></script>
 </head>
 <body class="" style="padding:100px">
-	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $dashboard_tip;?>">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">bookmark this page</a></h3>
+	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $dashboard_tip;?>">?</a></h3>
 <br>
         	<label><h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $assignment_tip;?>">?</a></h5></label>
 			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
@@ -74,7 +74,7 @@
 			  <table id="scanner_data">
 				<th>Student</th>
 				<th>Elapsed Time</th>
-				<th>Synopsis</th>
+				<!--th>Synopsis</th-->
 				<th>Status</th>
 				<th>Report</th>
 				<?php
@@ -83,7 +83,7 @@
 				<tr>
 					<td><?php echo $data->student_name;?></td>
 					<td><?php echo $data->elapsed_time;?></td>
-					<td><a href="/home/<?php echo $data->assignment_id;?>/<?php echo $data->synopsis_id;?>">synopsis</a></td>
+					<!--td><a href="/home/<?php echo $data->assignment_id;?>/<?php echo $data->synopsis_id;?>">synopsis</a></td-->
 					<td><?php echo $data->status;?></td>
 					<td><?php if ($data->report_url != '') { ?><a href="<?php echo $data->report_url;?>">Report</a><?php } else { echo "-----"; }?></td>
 				</tr>

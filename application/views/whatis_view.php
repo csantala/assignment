@@ -5,7 +5,7 @@
 <!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
-    <title>Snopzmini: Instant Synopses Generator</title>
+    <title>Assignment.Synopsis: Electronic Learning Aid</title>
 
     <!-- Meta -->
     <meta charset="UTF-8" />
@@ -51,27 +51,20 @@
         <div class="innerLR innerT">
             <div class="widget">
                 <div class="widget-head">
-                    <h4 class="heading edit_objective">Synopsis: Anonymous Synopsis Logger and Reporter at an Instant</h4>
+                    <h4 class="heading edit_objective">Assignment.Synopsis: Electronic Learning Aid</h4>
                     <span class="details pull-right">
-                    	<a href="<?php echo site_url();?>"><?php echo site_link(base_url());?></a>
+                    	<a href="<?php echo site_url();?>create">Create An Assignment</a>
                     </span>
                 </div>
                 <div class="widget-body">
                     <div class="row-fluid">
-                    	<h5>What is this thing?</h5>
-                    	<p>A tool which logs the steps you take to complete an objective. A synopsis logger.</p>
-                    	<h5>Why would I want to use this?</h5>
-                    	<p>In today's multitasking world, we often lose focus on our current objective. When building a synopsis with this tool, you efficiently complete your objective in peace while always in focus. Synopsis provides you with reference, statistics, and reporting components.</p>
+                    	<h5>Electronic Learning Aid?</h5>
+                    	<p>This is a tool which allows an assignment to be generated, passed to any number of students, and then have their work tracked and reported back to you.</p>
+                    	<h5>Real Time Synopsis Editor</h5>
+                    	<p>Students use the synopsis editor tool to log each step their take to complete the assignment. This is useful for determining trouble spots during the learning process and it also gives the student a moment to pause and reflect upon each step of the way while the work is completed.</p>
                     	<h5>How do I use this?</h5>
-                    	<p>It's simple. Navigate to synopsis.ablitica.com where it will instantly set up a unique hashed url view of the synopsis logger. State your objective. Begin work and log each step you take with a newline in the editor.</p>
-<p> Report your synopses, if you want, atvany time. Return to this hashed url view to continue your synopses later.  Note that the timer is always running so it's best to accomplish your objective in one sitting!</p>
-                    	<h5>Is this secure?</h5>
-                    	<p>Nothing is secure but the creator/owner of this site is not evil (yet): none of your personal information is collected here, so nobody knows who generated what. Further, Ablitica, the creator of this site, does not share any information logged at this site with anyone. Read our [privacy policy] for further information.</p>
-                    	<h5>Who made this</h5>
-                    	<p>Chris Santala, the founder of Ablitica, created this in 2013 in CodeIgniter & jQuery in Aptana with some Excel CSS wtitten by Vademire Politov.</p>
-						<h5>What is <a href="http://synopses.ablitica.com" target="_blank">synopses.ablitia.com</a></h5>
-						<p>The full version of the synopsis logger, featuring multiple synopsis creation, user accounts, projects, and the complete means to augment your productivity through the roof.</p>
-                    </div>
+                    	<p>Simply generate an assignment, send it to your students, and then monitor your assignment dashboard as they complete their work.  You can view and comment on student reports with links from the dashboard.<p>
+ 					 </div>
                 </div>
             </div>
         </div>
