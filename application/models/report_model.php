@@ -37,6 +37,7 @@ class Report_model extends CI_Model {
         $this->db->where('hash', $hash);
         $query = $this->db->get('report');
         $data = $query->result();
-        return $data[0];
+		if (empty($data)) { return null; }
+		else { return $data[0]; }
     }
 }

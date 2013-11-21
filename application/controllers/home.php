@@ -15,7 +15,7 @@ class Home extends CI_Controller {
         if ($assignment_hash) {
 
 			$assignment = $this->Objectives_model->get_assignment($assignment_hash);
-
+			if ($assignment == '') { show_404(); }
 			$student_meta = $this->Synopsis_model->get_student($synopsis_hash);
 
         	$rows = $this->Task_model->tasks($synopsis_hash);
@@ -43,6 +43,7 @@ class Home extends CI_Controller {
             );
             $this->load->view('editor_view', $view_data);
         } else {
+			show_404();
         	// TODO: generate proper hash
             $assignment_hash = time();
 			$view_data = array(

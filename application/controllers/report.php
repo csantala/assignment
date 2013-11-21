@@ -8,6 +8,7 @@ class Report extends CI_Controller {
         if ($hash) {
             // retreive report by hash
             $report = $this->Report_model->retrieve_report($hash);
+			if ($report == '') { show_404(); }
             // retreive synopsis for this report
             $synopsis = $this->Synopsis_model->synopsis($report->project_id);
 		//	ds($synopsis);

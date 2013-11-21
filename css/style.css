@@ -135,9 +135,34 @@ input {
 
 #objective {
 	color:#000000;
-	width:845px;
+	width:99%;
 }
 
 #steps {
-	color:#000000; width:845px;
+	color:#000000;
+    width:99%;
+}
+
+
+.comment_name {
+	color:#369;
+}
+
+.comment_comment {
+	color:#000000;
+}
+
+.comment_date {
+	color:#888;
+	font-size:small;
+}
+
+.comment_name_field {
+	color:#000000 !important;
+}
+
+.comment_text_field {
+	color:#000000;
+	width:500px;
+	height:100px;
 }

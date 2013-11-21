@@ -1,3 +1,8 @@
+<?php
+	$objective_tip = "Enter the main objective of this assignment here (required field).";
+	$notes_tip = "Enter a greater explanation of the objective here or any further useful information (not required).";
+	$email_tip = "Receive email notifications when when a student has submitted a report (not requried).";
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
@@ -78,13 +83,14 @@ $(document).ready(function () {
 	<br>
 
         	<form id="assignment_form" action="/create" method="post">
-				<label for="objective"><h5>OBJECTIVE&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Specify the objective of the assignment here.">?</a></h5></label>
+				<label for="objective"><h5>OBJECTIVE&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $objective_tip;?>">?</a></h5></label>
 				<input tabindex="1" class="span9" type="text" name="objective" id="objective" style="color:#000" >
 				<br /><br />
-				<label for="steps"><h5>NOTES&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Explanation of the Objective.">?</a></h5></label>
+				<label for="steps"><h5>NOTES&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $notes_tip;?>">?</a></h5></label>
 				<textarea tabindex="2" rows="5" id="steps" name="steps" style="color:#000" class="span9"></textarea>
-				<label for="teacher_email"><h5>EMAIL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Receive notifications from the dashboard when a student has submitted a report. Email address is not required.">?</a></h5></label>
-				<input tabindex="3" type="text" name="teacher_email" id="teacher_email" style="color:#000">
+				<!--label for="teacher_email"><h5>EMAIL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $email_tip;?>">?</a></h5></label>
+				<input tabindex="3" type="text" name="teacher_email" id="teacher_email" style="color:#000"-->
+				<input type="hidden" name="teacher_email" id="teacher_email" value="test@test.com" />
 				<br /><br />
 				<p><a tabindex="4" type="submit" id="submit" class="btn btn-icon btn-primary glyphicons parents"><i></i>Create Assignment</a></p>
 			</form>

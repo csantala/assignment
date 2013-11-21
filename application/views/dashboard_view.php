@@ -1,3 +1,9 @@
+<?php
+	$dashboard_tip = "This page will update with student's progress while they complete the assignment. Send the ASSIGNMENT URL to your students.";
+	$assignment_tip = "Email or Text this URL to your students.";
+	$progress_tip = "Student progress will appear in this panel.  Click a Report link to view a report of the student's synopsis.";
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
@@ -8,7 +14,7 @@
 	<title>Dashboard</title>
     <!-- Meta -->
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content="120">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -49,12 +55,11 @@
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 
     <script src="/js/bookmark.js"></script>
-
 </head>
 <body class="" style="padding:100px">
-	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Bookmark this page and monitor it over time - the page will update with student's progress while they complete the assignment.">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">bookmark this page</a></h3>
+	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $dashboard_tip;?>">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">bookmark this page</a></h3>
 <br>
-        	<label><h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Email or Text this URL to your students.">?</a></h5></label>
+        	<label><h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $assignment_tip;?>">?</a></h5></label>
 			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
 			<p>
 			<label><h5>OBJECTIVE</h5></label>
@@ -64,12 +69,12 @@
 			<textarea id="steps" rows="5" id="steps" name="steps" readonly><?php echo $steps;?></textarea>
 		</p>
 		<p>
-			<h4 id="progress">Progress&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="As students work on and complete their assignment, their progress will appear in this space.">?</a></h4>
+			<h4 id="progress">Progress&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $progress_tip;?>">?</a></h4>
 
 			  <table id="scanner_data">
 				<th>Student</th>
 				<th>Elapsed Time</th>
-				<th>Synopses</th>
+				<th>Synopsis</th>
 				<th>Status</th>
 				<th>Report</th>
 				<?php

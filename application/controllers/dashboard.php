@@ -13,7 +13,7 @@ class Dashboard extends CI_Controller {
 			$synopsis_hash = time();
 			$assignment_hash = $this->uri->segment(3);
 			$assignment = $this->Objectives_model->get_assignment($assignment_hash);
-
+			if ($assignment == '') { show_404(); }
 			$scanner_data = $this->Synopsis_model->scanner($assignment_hash);
 
 			$view_data = array(

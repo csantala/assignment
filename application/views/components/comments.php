@@ -1,8 +1,10 @@
 <?php
-
+ if(! empty($comments)) {
 	foreach ($comments as $comment) {?>
 		<p>
-		<?php echo $comment->user ?>&nbsp;<?php echo $comment->date; ?><br>
-		<?php echo $comment->comment;?>
+		<span class="comment_name"><?php echo $comment->user ?></span>&nbsp;&bull;&nbsp;<span class="comment_date"><?php echo date("F j, Y, g:i a",$comment->date); ?></span><br>
+		<p><span class="comment_comment"><?php echo $comment->comment;?></span></p>
 		</p>
+		<hr>
 	<?php }?>
+<?php } ?>

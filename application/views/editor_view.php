@@ -47,20 +47,20 @@
 </head>
 <body class="" style="padding:100px">
 		<h3 id="assignment_header">Assignment Synopsis&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Log each step taken to complete the assignment with the editor below.  Use a new line for each step.   When complete, click the 'SUBMIT ASSIGNMENT' button.">?</a>&nbsp;&bull;&nbsp;<a style="line-height: 12px;font-size: 12px" id="bookmarkme" href="#" rel="sidebar" title="Bookmark this page to return to it at any time in order to complete the assignment in multiple sessions.">bookmark this page</a></h3>
-<br>
+		<br>
         	<form id="begin" action="/create/begin" method="post">
         		<p>
         			STUDENT: <input id="student_name" value="<?php echo $student_name; ?>" name="student_name" class="span3" type="text" readonly style="color:#000000" />
         		</p>
-<p>
-				<label><h5>OBJECTIVE</h5></label>
-				<input id="objective" type="text" readonly value="<?php echo $objective;?>" />
-</p>
-<p>
-				<label><h5>NOTES</h5></label>
-				<textarea id="steps" readonly><?php echo $steps;?></textarea>
-</p>
-				</form>
+				<p>
+					<label><h5>OBJECTIVE</h5></label>
+					<input class="span9"  id="objective" type="text" readonly value="<?php echo $objective;?>" />
+				</p>
+				<p>
+					<label><h5>NOTES</h5></label>
+					<textarea id="steps" readonly><?php echo $steps;?></textarea>
+				</p>
+			</form>
 		        <div class="row-fluid">
 		            <form id="synopsis">
 		                <div id="rows" data-assignment_id="<?php echo $assignment_hash?>"  data-project_id="<?php echo $project_id?>" data-session="<?php echo $session?>">

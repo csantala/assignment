@@ -50,9 +50,9 @@
 	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script>
 $(document).ready(function() {
-	var timezone = jstz.determine();
-	$.cookie('timezone', timezone.name());
 	$("#student_name").focus();
+//	var timezone = jstz.determine();
+//	$.cookie('timezone', timezone.name());
 });
 	</script>
 </head>

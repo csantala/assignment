@@ -36,9 +36,15 @@ class Generate extends CI_Controller {
         redirect('/generate/submitted/' . $project_id . '/' . $asshash);
     }
 
-	public function submitted($synopsis_id, $assignment_hash) {
+	public function submitted($synopsis_id = '', $assignment_hash = '') {
+
+		if ($synopsis_id == '' || $assignment_hash == '') { show_404(); }
 
 		$assignment = $this->Objectives_model->get_assignment($assignment_hash);
+		if ($assignment == '') { show_404(); }
+
+		$synopses = $this->Task_model->tasks($synopsis_id);
+		if (empty($synopses)) { show_404(); }
 
 		$report_url = site_url() . 'report/' . $synopsis_id;
 		$status = 'submitted';

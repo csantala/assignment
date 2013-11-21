@@ -61,6 +61,7 @@ class Synopsis_model extends CI_Model {
 		$this->db->where('synopsis_id', $synopsis_id);
 		$query = $this->db->get('synopsis');
 		$data = $query->result();
+		if (empty($data)) { show_404(); }
 		return $data[0];
 	}
 
