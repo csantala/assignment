@@ -1,6 +1,6 @@
 <?php
 	date_default_timezone_set($timezone);
-	$synopsis_tip = "Explain each step taken to complete the assignment with the editor below.  Use a new line for each step, submit when complete. Bookmark this page to work on your synopsis in the future.";
+	$synopsis_tip = "Document each step taken to complete the assignment in the editor below.  Use a new line for each step, submit when complete. Bookmark this page to work on your synopsis in the future.";
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
