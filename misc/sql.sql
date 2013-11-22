@@ -1,8 +1,20 @@
--- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(255) NOT NULL DEFAULT '',
+  `user_pass` varchar(60) NOT NULL DEFAULT '',
+  `user_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_last_login` datetime DEFAULT NULL,
+  `user_hash` varchar(255) DEFAULT NULL,
+  `user_level` enum('user','administrator') NOT NULL DEFAULT 'user',
+  `user_timezone` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `remember` varchar(20) NOT NULL,
+  `product` enum('half','full') NOT NULL DEFAULT 'half',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_email` (`user_email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Table structure for table `comments`
---
 
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

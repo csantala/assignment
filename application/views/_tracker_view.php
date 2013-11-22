@@ -5,7 +5,7 @@
 <!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
-	<title>synopsiss</title>
+	<title>Dashboard</title>
 
 	<!-- Meta -->
 	<meta charset="UTF-8" />
@@ -67,77 +67,84 @@
 		<!-- Sidebar menu & content wrapper -->
 		<div id="wrapper">
 
-			<!-- Sidebar Menu -->
-			<div id="menu" class="hidden-phone hidden-print">
+		<!-- Sidebar Menu -->
+		<div id="menu" class="hidden-phone hidden-print">
 
-				<!-- Brand -->
-				<?php $this->load->view('/components/brand')?>
+			<!-- Brand -->
+			<?php $this->load->view('/components/brand')?>
 
-				<!-- Scrollable menu wrapper with Maximum height -->
-				<div class="slim-scroll" data-scroll-height="800px">
+			<!-- Scrollable menu wrapper with Maximum height -->
+			<div class="slim-scroll" data-scroll-height="800px">
 
-				<!-- Sidebar Profile -->
-				<?php // $this->load->view('components/sidebar_profile'); ?>
-				<!-- // Sidebar Profile END -->
+			<!-- Sidebar Profile -->
+			<?php // $this->load->view('components/sidebar_profile'); ?>
+			<!-- // Sidebar Profile END -->
 
-				<!-- Regular Size Menu -->
-				<?php $this->load->view('/components/side_menu_admin') ?>
-				<div class="clearfix"></div>
-				<!-- // Regular Size Menu END -->
+			<!-- Regular Size Menu -->
+			<?php $this->load->view('/components/side_menu_admin') ?>
+			<div class="clearfix"></div>
+			<!-- // Regular Size Menu END -->
 
-				<?php $this->load->view('/components/glyph_menu') ?>
-
-				</div>
-				<!-- // Scrollable Menu wrapper with Maximum Height END -->
+			<?php $this->load->view('/components/glyph_menu') ?>
 
 			</div>
-			<!-- // Sidebar Menu END -->
+			<!-- // Scrollable Menu wrapper with Maximum Height END -->
 
-			<!-- Content -->
-			<div id="content">
-				<div class="innerLR innerT">
-					<div class="widget">
-						<div class="widget-body">
-							<h4>Synopses</h4>
-							<div class="row-fluid">
-								<table class="dynamicTable table table-striped table-bordered table-condensed dataTable">
-									<thead>
-										<tr>
-											<th>Student</th><th>ElapsedTime</th><th>Status</th><th>Report</th>
-										</tr>
-									</thead>
-									<tbody>
-								<?php //ds($synopsiss);
-									foreach ($synopses as $synopsis) {
-								?>
+		</div>
+		<!-- // Sidebar Menu END -->
+
+		<!-- Content -->
+		<div id="content">
+			<div class="innerLR innerT">
+				<div class="widget">
+					<div class="widget-head">
+						<h4 class="heading">Tracker</h4>
+					</div>
+					<div class="widget-body">
+						<div class="row-fluid">
+						 	<p><?=$pagination?></p>
+							<table width="100%">
+								<tr style="font-weight:bold">
+									<td>Time</td><td>&nbsp;&nbsp;</td>
+									<td>Page</td><td>&nbsp;&nbsp;</td>
+									<td>Referer</td><td>&nbsp;&nbsp;</td>
+									<td>Browser</td><td>&nbsp;&nbsp;</td>
+									<td>OS</td><td>&nbsp;&nbsp;</td>
+									<td>IP</td><td>&nbsp;&nbsp;</td>
+								</tr>
+
+								<? if(isset($stats)) foreach ($stats as $row) {
+
+									if (strlen($row->page_title) > 50) $title = substr($row->page_title,0,40) . '..';
+									else $title = $row->page_title;
+
+									if(strlen($row->referer) > 20) $ref = "..".substr($row->referer, -20);
+									else $ref = $row->referer;
+
+									if ($row->referer == '0') $ref = 'none';
+									else $ref = '<a href="'.$row->referer.'" title="'.$row->referer.'">'.$ref.'</a>';
+									echo '
 									<tr>
-										<td>
-											<?php echo $synopsis->student_name;?>
-										</td>
-										<td>
-											<?php echo $synopsis->elapsed_time;?>
-										</td>
-
-										<td>
-											<?php echo $synopsis->status;?>
-										</td>
-										<td>
-											<a target="blank" href="<?php echo $synopsis->report_url;?>">report</a>
-										</td>
-									</tr>
-								<?php } ?>
-								</table>
-							</div>
+									<td style="color:#666">'.substr($row->dt,5,30).'</td><td>&nbsp;&nbsp;</td>
+									<td>'.$title.'</td><td>&nbsp;&nbsp;</td>
+									<td class="ref">'.$ref.'</td><td>&nbsp;&nbsp;</td>
+									<td style="color:#666">'.$row->browser_family.' '.$row->browser_version.'</td><td>&nbsp;&nbsp;</td>
+									<td style="color:#666">'.$row->os.'</td><td>&nbsp;&nbsp;</td>
+									<td><a href="http://www.infosniper.net/?ip_address='.$row->ip.'" target="_blank">'.$row->ip.'</a></td><td>&nbsp;&nbsp;</td>
+									</tr>';
+								} ?>
+							</table><br>
+							<p><?=$pagination?></p>
 						</div>
 					</div>
 				</div>
-			<!-- // Content END -->
 			</div>
+		<!-- // Content END -->
 		</div>
 		<div class="clearfix"></div>
 		<!-- // Sidebar menu & content wrapper END -->
 
-		<?php $this->load->view('/components/admin_footer') ?>
+		<?php $this->load->view('/components/footer') ?>
 		<!-- // Footer END -->
 
 	</div>

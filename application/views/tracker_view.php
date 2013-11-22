@@ -85,7 +85,7 @@
 			<div class="clearfix"></div>
 			<!-- // Regular Size Menu END -->
 
-			<?php $this->load->view('/components/glyph_menu') ?>
+			<?php //$this->load->view('/components/glyph_menu') ?>
 
 			</div>
 			<!-- // Scrollable Menu wrapper with Maximum Height END -->
@@ -113,7 +113,7 @@
 									<td>IP</td><td>&nbsp;&nbsp;</td>
 								</tr>
 
-								<? if(isset($stats)) foreach ($stats as $row) {
+								<?php if(isset($stats)) foreach ($stats as $row) {
 
 									if (strlen($row->page_title) > 50) $title = substr($row->page_title,0,40) . '..';
 									else $title = $row->page_title;
@@ -140,11 +140,11 @@
 				</div>
 			</div>
 		<!-- // Content END -->
-		</div>
+		</div></div>
 		<div class="clearfix"></div>
 		<!-- // Sidebar menu & content wrapper END -->
 
-		<?php $this->load->view('/components/footer') ?>
+		<?php $this->load->view('/components/admin_footer') ?>
 		<!-- // Footer END -->
 
 	</div>

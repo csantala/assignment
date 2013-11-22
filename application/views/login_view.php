@@ -5,7 +5,7 @@
 <!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
-	<title>Snopz: Developer Synopses</title>
+	<title>Assignment</title>
 
 	<!-- Meta -->
 	<meta charset="UTF-8" />
@@ -41,8 +41,6 @@
 
 		<div class="wrapper">
 
-			<h1 class="glyphicons">Snopz: Developer Synopses</i></h1>
-
 			<!-- Box -->
 			<div class="widget">
 
@@ -76,7 +74,7 @@
 						not found
 <?php
 	} else { ?>
-						<a href="">What is Snopz?</a>
+						<a href="">What is this?</a>
 <?php } ?>
 					</p>
 					<!-- p class="glyphicons restart"><i></i>Please enter your username and password ...</p -->

@@ -16,6 +16,7 @@ class Create extends CI_Controller {
 			$assignment_id = hashids_encrypt(time() + rand(0,10000));
 
 			$data = array(
+				'time' => time(),
 				'dashboard_id' => $dashboard_id,
 				'objective' => $objective,
 				'steps' => $steps,

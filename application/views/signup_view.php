@@ -84,8 +84,6 @@
 
 	<div class="wrapper signup">
 
-			<h1 class="glyphicons">Snopz Sign Up<i></i></h1>
-
 			<!-- Box -->
 			<div class="widget">
 
@@ -143,7 +141,7 @@
 ?>
 								</select>
 
-								<a id="submit" role="button" wairole="button" class="btn btn-icon-stacked btn-block btn-success glyphicons user_add"><i></i><span>Create account and</span><span class="strong">Join Snopz now</span></a>
+								<a id="submit" role="button" wairole="button" class="btn btn-icon-stacked btn-block btn-success glyphicons user_add"><i></i><span>Create account</span></a>
 							</div>
 						</div>
 						<!-- // Column END -->

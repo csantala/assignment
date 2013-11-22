@@ -2,7 +2,8 @@
 			<ul class="menu-0">
 				<!-- Blank page template menu example -->
 				<!-- Menu Regular Item (add class active to LI for an active menu item) -->
-				<li class="glyphicons right_arrow"><a href="/minis/"><i></i><span>All Minis</span></a></li>
+				<li class="glyphicons right_arrow"><a href="/dashboards/"><i></i><span>Dashboards</span></a></li>
+				<li class="glyphicons right_arrow"><a href="/synopses/"><i></i><span>Synopses</span></a></li>
 
 				<!--li class="hasSubmenu glyphicons right_arrow active">
 					<a data-toggle="collapse" href="/admin/all_projects/"><i></i><span>All Projects</span></a>

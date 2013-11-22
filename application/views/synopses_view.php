@@ -5,7 +5,7 @@
 <!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
-	<title>synopsiss</title>
+	<title>Minis</title>
 
 	<!-- Meta -->
 	<meta charset="UTF-8" />
@@ -45,7 +45,7 @@
 			<!-- Wrapper -->
 			<div class="wrapper">
 
-			<!-- Menu Toggle Button -->
+				<!-- Menu Toggle Button -->
 				<button type="button" class="btn btn-navbar">
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
@@ -67,79 +67,78 @@
 		<!-- Sidebar menu & content wrapper -->
 		<div id="wrapper">
 
-			<!-- Sidebar Menu -->
-			<div id="menu" class="hidden-phone hidden-print">
+		<!-- Sidebar Menu -->
+		<div id="menu" class="hidden-phone hidden-print">
 
-				<!-- Brand -->
-				<?php $this->load->view('/components/brand')?>
+			<!-- Brand -->
+			<?php $this->load->view('/components/brand')?>
 
-				<!-- Scrollable menu wrapper with Maximum height -->
-				<div class="slim-scroll" data-scroll-height="800px">
+			<!-- Scrollable menu wrapper with Maximum height -->
+			<div class="slim-scroll" data-scroll-height="800px">
 
-				<!-- Sidebar Profile -->
-				<?php // $this->load->view('components/sidebar_profile'); ?>
-				<!-- // Sidebar Profile END -->
+			<!-- Sidebar Profile -->
+			<?php // $this->load->view('components/sidebar_profile'); ?>
+			<!-- // Sidebar Profile END -->
 
-				<!-- Regular Size Menu -->
-				<?php $this->load->view('/components/side_menu_admin') ?>
-				<div class="clearfix"></div>
-				<!-- // Regular Size Menu END -->
+			<!-- Regular Size Menu -->
+			<?php $this->load->view('/components/side_menu_admin') ?>
+			<div class="clearfix"></div>
+			<!-- // Regular Size Menu END -->
 
-				<?php $this->load->view('/components/glyph_menu') ?>
-
-				</div>
-				<!-- // Scrollable Menu wrapper with Maximum Height END -->
+			<?php $this->load->view('/components/glyph_menu') ?>
 
 			</div>
-			<!-- // Sidebar Menu END -->
+			<!-- // Scrollable Menu wrapper with Maximum Height END -->
 
-			<!-- Content -->
-			<div id="content">
-				<div class="innerLR innerT">
-					<div class="widget">
-						<div class="widget-body">
-							<h4>Synopses</h4>
-							<div class="row-fluid">
-								<table class="dynamicTable table table-striped table-bordered table-condensed dataTable">
-									<thead>
-										<tr>
-											<th>Student</th><th>ElapsedTime</th><th>Status</th><th>Report</th>
-										</tr>
-									</thead>
-									<tbody>
-								<?php //ds($synopsiss);
-									foreach ($synopses as $synopsis) {
-								?>
+		</div>
+		<!-- // Sidebar Menu END -->
+		</div>
+		<!-- Content -->
+		<div id="content">
+			<div class="innerLR innerT">
+				<div class="widget">
+					<div class="widget-body">
+						<h4>Minis</h4>
+						<div class="row-fluid">
+							<table class="dynamicTable table table-striped table-bordered table-condensed dataTable">
+								<thead>
 									<tr>
-										<td>
-											<?php echo $synopsis->student_name;?>
-										</td>
-										<td>
-											<?php echo $synopsis->elapsed_time;?>
-										</td>
-
-										<td>
-											<?php echo $synopsis->status;?>
-										</td>
-										<td>
-											<a target="blank" href="<?php echo $synopsis->report_url;?>">report</a>
-										</td>
+										<th>Date</th><th>Mini</th><th>Objective</th><th>Elapsed Time</th><th>ↄ==c</th>
 									</tr>
-								<?php } ?>
-								</table>
-							</div>
+								</thead>
+								<tbody>
+							<?php
+								foreach ($minis as $mini) {
+							?>
+								<tr>
+									<td>
+										<?php echo date("F j, Y, g:i a", $mini->time); ?>
+									</td>
+									<td>
+										<a href="/<?php echo $mini->project_id; ?>/"><?php echo site_url() . $mini->project_id; ?></a>
+									</td>
+									<td>
+										<?php echo $mini->task ?>
+									</td>
+									<td>
+										<?php echo 'x hours y minutes'?>
+									</td>
+									<td>
+										<a class="confirm" href="#<?php // echo $task->$project_id?>">delete</a>
+									</td>
+								</tr>
+							<?php } ?>
+							</table>
 						</div>
 					</div>
 				</div>
-			<!-- // Content END -->
 			</div>
-		</div>
-		<div class="clearfix"></div>
+			<!-- // Content END -->
+			<div class="clearfix"></div>
 		<!-- // Sidebar menu & content wrapper END -->
-
+		</div>
 		<?php $this->load->view('/components/admin_footer') ?>
 		<!-- // Footer END -->
-
 	</div>
 	<!-- // Main Container Fluid END -->
 

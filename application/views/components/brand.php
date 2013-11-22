@@ -1,1 +1,1 @@
-<a href="\minis\" class="appbrand">Snopzmini</a>
+<a href="\minis\" class="appbrand">Assignment</a>

@@ -81,10 +81,11 @@
 			);
 
 			if (! empty($_POST)) {
-				//if ($this->simpleloginsecure->create($_POST['username'], $_POST['email'], $_POST['password'], $_POST['timezone'], 'create', true)) {
-				//	redirect('/admin');
+				if ($this->simpleloginsecure->create($_POST['username'], $_POST['email'], $_POST['password'], $_POST['timezone'], 'create', true)) {
+					redirect('/');
+				}
 			}
-				$view_data += array('error' => 'email exists');
+			//$view_data += array('error' => 'email exists');
 
 			$this->load->view('signup_view', $view_data);
 		}

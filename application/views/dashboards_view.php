@@ -5,7 +5,7 @@
 <!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
 <!--[if !IE]><!--><html><!-- <![endif]-->
 <head>
-	<title>synopsiss</title>
+	<title>Dashboards</title>
 
 	<!-- Meta -->
 	<meta charset="UTF-8" />
@@ -98,31 +98,33 @@
 				<div class="innerLR innerT">
 					<div class="widget">
 						<div class="widget-body">
-							<h4>Synopses</h4>
+							<h4>Dashboards</h4>
 							<div class="row-fluid">
 								<table class="dynamicTable table table-striped table-bordered table-condensed dataTable">
 									<thead>
 										<tr>
-											<th>Student</th><th>ElapsedTime</th><th>Status</th><th>Report</th>
+											<th>Date</th><th>Dashboard</th><th>Objective</th><th>Synopses</th><th>Reports</th>
 										</tr>
 									</thead>
 									<tbody>
-								<?php //ds($synopsiss);
-									foreach ($synopses as $synopsis) {
+								<?php //ds($dashboards);
+									foreach ($dashboards as $dashboard) {
 								?>
 									<tr>
 										<td>
-											<?php echo $synopsis->student_name;?>
+											<?php echo date("F j, Y, g:i a", $dashboard->time); ?>
 										</td>
 										<td>
-											<?php echo $synopsis->elapsed_time;?>
-										</td>
-
-										<td>
-											<?php echo $synopsis->status;?>
+											<a target="_blank" href="/dashboard/<?php echo $dashboard->dashboard_id; ?>/<?php echo $dashboard->assignment_id; ?>">dashboard</a>
 										</td>
 										<td>
-											<a target="blank" href="<?php echo $synopsis->report_url;?>">report</a>
+											<?php //echo $mini->task ?>
+										</td>
+										<td>
+											<?php // echo 'x hours y minutes'?>
+										</td>
+										<td>
+											<a class="confirm" href="#<?php // echo $task->$project_id?>"></a>
 										</td>
 									</tr>
 								<?php } ?>
@@ -133,13 +135,12 @@
 				</div>
 			<!-- // Content END -->
 			</div>
-		</div>
-		<div class="clearfix"></div>
+				</div>
+			<div class="clearfix"></div>
 		<!-- // Sidebar menu & content wrapper END -->
 
 		<?php $this->load->view('/components/admin_footer') ?>
 		<!-- // Footer END -->
-
 	</div>
 	<!-- // Main Container Fluid END -->
 
