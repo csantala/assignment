@@ -4,11 +4,11 @@
 
 		public function __construct () {
 			parent::__construct();
+			$stats = $this->tracker_lib->track('tracker');
+			$this->db->insert('tracker', $stats);
 		}
 
 		public function index() {
-			$stats = $this->tracker_lib->track('what is');
-			$this->db->insert('tracker', $stats);
 			$this->load->view('whatis_view');
 		}
 	}

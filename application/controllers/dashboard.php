@@ -5,6 +5,9 @@ class Dashboard extends CI_Controller {
     public function __construct() {
         parent::__construct();
 //		check_for_admin();
+		$stats = $this->tracker_lib->track('dashboard');
+		$this->db->insert('tracker', $stats);
+
     }
 
 	public function index() {

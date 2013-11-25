@@ -4,6 +4,9 @@
 
 		public function __construct() {
 			parent::__construct();
+
+			$stats = $this->tracker_lib->track('comment');
+			$this->db->insert('tracker', $stats);
 		}
 
 		public function add_or_update() {

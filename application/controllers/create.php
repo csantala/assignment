@@ -7,6 +7,10 @@ class Create extends CI_Controller {
     }
 
 	public function index() {
+
+		$stats = $this->tracker_lib->track('create assignment');
+		$this->db->insert('tracker', $stats);
+
 		if (! empty($_POST)) {
 			$teacher_email = $_POST['teacher_email'];
 			$objective = $_POST['objective'];

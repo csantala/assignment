@@ -4,6 +4,9 @@ class Report extends CI_Controller {
 
     public function index() {
 
+		$stats = $this->tracker_lib->track('report');
+		$this->db->insert('tracker', $stats);
+
         $hash = $this->uri->segment(2);
         if ($hash) {
             // retreive report by hash

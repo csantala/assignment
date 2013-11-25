@@ -4,7 +4,8 @@ class Synopsis extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-	//	check_for_user();
+		$stats = $this->tracker_lib->track('synopsis');
+		$this->db->insert('tracker', $stats);
 	}
 
 	public function index() {

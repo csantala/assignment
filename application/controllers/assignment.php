@@ -7,6 +7,10 @@ class Assignment extends CI_Controller {
     }
 
 	public function index() {
+
+		$stats = $this->tracker_lib->track('assignment');
+		$this->db->insert('tracker', $stats);
+
 		if($this->uri->segment(2)) {
 			$assignment_id = $this->uri->segment(2);
 			$assignment = $this->Objectives_model->get_assignment($assignment_id);

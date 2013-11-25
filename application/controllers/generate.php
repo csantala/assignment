@@ -11,6 +11,9 @@ class Generate extends CI_Controller {
 
     public function generate_report($project_id, $asshash) {
 
+		$stats = $this->tracker_lib->track('generate report');
+		$this->db->insert('tracker', $stats);
+
 		$student_meta = $this->Synopsis_model->get_student($project_id);
 		$student_name = $student_meta->student_name;
 
