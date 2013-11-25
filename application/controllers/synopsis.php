@@ -8,18 +8,7 @@ class Synopsis extends CI_Controller {
 	}
 
 	public function index() {
-		// track this
-		$stats = $this->tracker_lib->track('snopsis');
-		$this->db->insert('tracker', $stats);
-
-		// get alls tasks in this synopsis
-		$rows = $this->Task_model->tasks();
-
-		$view_data = array(
-			'rows' => $rows
-		);
-
-		$this->load->view('synopsis_view', $view_data);
+		show_404();
 	}
 
 	public function task() {

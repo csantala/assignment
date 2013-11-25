@@ -93,9 +93,10 @@
 	                <?php } ?>
 	                </tbody>
 	           </table>
+	           </div>
 	           <a href="/home/<?php echo $assignment_id;?>/<?php echo $synopsis_id;?>">continue synopsis</a>&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $continue_tip;?>">?</a>
 
-	          </div>
+
 	        <?php $this->load->view('/components/comments', array('comments_container_id' => $hash)); ?>
 	        <?php $this->load->view('/components/comment_form', array('comments_container_id' => $hash)); ?>
 	         <span class="comment"><span>

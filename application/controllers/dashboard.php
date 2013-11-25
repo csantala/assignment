@@ -4,6 +4,7 @@ class Dashboard extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+//		check_for_admin();
     }
 
 	public function index() {
@@ -60,6 +61,7 @@ class Dashboard extends CI_Controller {
 				//$this->load->view('assignment_view', $view_data);
 				//	ds($_POST,1);
 			} else {
+				show_404();
 				// TODO: proper hashing
 				$dashboard_hash = time();
 
