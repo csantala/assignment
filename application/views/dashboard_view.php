@@ -1,5 +1,5 @@
 <?php
-	$dashboard_tip = "This page will update with student's progress while they complete the assignment. Send the ASSIGNMENT URL to your students. Bookmark this page for future reference.";
+	$dashboard_tip = "Bookmark this page for future reference.";
 	$assignment_tip = "Email or Text this URL to your students.";
 	$progress_tip = "Student progress appears in this panel.  Click a Report link to view a report of the student's synopsis. Report links only appear when a student has submitted their completed work.";
 ?>
@@ -56,8 +56,8 @@
 
     <script src="/js/bookmark.js"></script>
 </head>
-<body class="" style="padding:100px">
-	<h3 id="assignment_header">Assignment Dashboard&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $dashboard_tip;?>">?</a></h3>
+<body>
+	<h3 id="assignment_header">Assignment Dashboard</h3>
 <br>
         	<label><h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $assignment_tip;?>">?</a></h5></label>
 			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>

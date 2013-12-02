@@ -1,6 +1,6 @@
 <?php
 	date_default_timezone_set($timezone);
-	$synopsis_tip = "Document each step taken to complete the assignment in the editor below.  Use a new line for each step, submit when complete. Bookmark this page to work on your synopsis in the future.";
+	$synopsis_tip = "Document each task you take to complete the assignment in the editor below.  Use a new line for each task, submit when complete. Bookmark this page to work on your synopsis in the future.";
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -48,8 +48,8 @@
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 
 </head>
-<body class="" style="padding:100px">
-		<h3 id="assignment_header">Synopsis&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $synopsis_tip?>">?</a></h3>
+<body>
+		<h3 id="assignment_header">Synopsis&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="<?php echo $synopsis_tip?>">?</a></h3>
 		<br>
         	<form id="begin" action="/create/begin" method="post">
         		<p>

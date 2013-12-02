@@ -56,9 +56,9 @@ $(document).ready(function() {
 });
 	</script>
 </head>
-<body class="" style="padding:100px">
+<body>
 
-	<h3 id="assignment_header">Assignment	&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="Enter your name then click the Begin button.">?</a></h3>
+	<h3 id="assignment_header">Assignment</h3>
 <br>
         	<form id="begin" action="/create/begin" method="post">
         		<p>

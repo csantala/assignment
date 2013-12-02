@@ -78,7 +78,7 @@ $(document).ready(function () {
 });
 	</script>
 </head>
-<body class="" style="padding:100px">
+<body>
 	<h3 id="assignment_header">Create An Assignment</h3>
 	<br>
 

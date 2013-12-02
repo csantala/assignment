@@ -48,7 +48,7 @@
     <!-- LESS.js Library -->
     <script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 </head>
-<body class="" style="padding:100px">
+<body>
      <!-- Content -->
     <div id="contentx">
         <div class="innerLR innerT">

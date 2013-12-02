@@ -1,6 +1,6 @@
 <?php
 	date_default_timezone_set($timezone);
-	$report_tip = "This is the completed synopsis. Both the student and the instructor may comment on this page - bookmark this page to see new comments.";
+	$report_tip = "Bookmark this page to see new comments.";
 	$et_tip = "The this the student's synopsis with elapsed time from initiation to completion.";
 	$continue_tip = "Synopsis incomplete? Click the link to continue and then resubmit";
 ?>
@@ -57,8 +57,8 @@
     <script src="/js/bookmark.js"></script>
 </head>
 
-<body class="" style="padding:100px">
-	   	<h3 id="assignment_header">Synopsis Report&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $report_tip;?>">?</a></h3><br>
+<body>
+	   	<h3 id="assignment_header">Synopsis Report</h3><br>
         	<form id="begin" action="/create/begin" method="post">
 
         		<p>

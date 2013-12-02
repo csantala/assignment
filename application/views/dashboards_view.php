@@ -34,7 +34,7 @@
 	<!-- LESS.js Library -->
 	<script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 </head>
-<body class="">
+<body>
 
 	<!-- Main Container Fluid -->
 	<div class="container-fluid fluid menu-left">
