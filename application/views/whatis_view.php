@@ -59,9 +59,9 @@
                 <div class="widget-body">
                     <div class="row-fluid">
                     	<h5>Electronic Learning Aid?</h5>
-                    	<p>This is a tool which allows an assignment to be generated, passed to any number of students, and then have their work tracked and reported back to you.</p>
+                    	<p>This is a tool which allows an assignment to be generated, passed to any number of students, and have their work tracked and reported back to you.</p>
                     	<h5>Real Time Synopsis Editor</h5>
-                    	<p>Students use the synopsis editor tool to log each step their take to complete the assignment. This is useful for determining trouble spots during the learning process and it also gives the student a moment to pause and reflect upon each step of the way while the work is completed.</p>
+                    	<p>Students use the synopsis editor to log each step they take to complete the assignment. This is useful to determine trouble spots during the learning process and it also provides the student with a moment to pause and reflect as they record the tasks conducted in the completion of the assignment.</p>
                     	<h5>How do I use this?</h5>
                     	<p>Simply generate an assignment, send it to your students, and then monitor your assignment dashboard as they complete their work.  You can view and comment on student reports with links from the dashboard.<p>
  					 </div>
