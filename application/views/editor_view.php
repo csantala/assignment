@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+  	 <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
     <!-- Excel-like css -->
     <link href="/css/excel-2013.css" rel="stylesheet" type="text/css" />
@@ -26,8 +26,8 @@
     <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
 
 	<!-- Bootstrap Extended -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
     <!-- Glyphicons Font Icons -->
     <link href="/common/theme/css/glyphicons.css" rel="stylesheet" />
@@ -55,14 +55,12 @@
         		<p>
         			STUDENT: <input id="student_name" value="<?php echo $student_name; ?>" name="student_name" class="span3" type="text" readonly style="color:#000000" />
         		</p>
-				<p>
-					<label><h5>OBJECTIVE</h5></label>
-					<input class="span9"  id="objective" type="text" readonly value="<?php echo $objective;?>" />
-				</p>
-				<p>
-					<label><h5>NOTES</h5></label>
-					<textarea id="steps" readonly><?php echo $steps;?></textarea>
-				</p>
+
+					<h5>OBJECTIVE</h5>
+				<p><input class="span9"  id="objective" type="text" readonly value="<?php echo $objective;?>" /></p>
+
+					<h5>NOTES</h5>
+				<p><textarea id="steps" readonly><?php echo $steps;?></textarea></p>
 			</form>
 		        <div class="row-fluid">
 		            <form id="synopsis">
@@ -106,11 +104,11 @@
 		                    </table>
 		                </div>
 		            </form>
-        	<p>
+
         		<div id="done">
         			<a class="btn primary confirm" href="/generate/generate_report/<?php echo $project_id?>/<?php echo $assignment_hash?>">SUBMIT SYNOPSIS</a>
         		</div>
-        	</p>
+
 		        </div>
 <div id="getlost">
         <?php // $this->load->view('/components/footer') ?>

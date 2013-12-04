@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+   	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
     <!-- Excel-like css -->
     <link href="/css/excel-2007.css" rel="stylesheet" type="text/css" />
@@ -28,8 +28,8 @@
     <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
 
   	<!-- Bootstrap Extended -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
 	<script type="application/javascript" src="/js/wysihtml5-0.3.0_rc2.js" ></script>
 	<script type="application/javascript" src="/js/jquery-1.7.1.min.js"></script>
@@ -59,24 +59,28 @@
 <body>
 	<h3 id="assignment_header">Assignment Dashboard</h3>
 <br>
-        	<label><h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $assignment_tip;?>">?</a></h5></label>
-			<p><input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>"></p>
-			<p>
-			<label><h5>OBJECTIVE</h5></label>
-			<input id="objective" class="span9" type="text" name="objective" value="<?php echo $objective;?>" readonly>
-		</p><p>
-			<label><h5>NOTES</h5></label>
-			<textarea id="steps" rows="5" id="steps" name="steps" readonly><?php echo $steps;?></textarea>
-		</p>
-		<p>
+   <h5>ASSIGNMENT URL&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $assignment_tip;?>">?</a></h5>
+
+   <p>
+  	 <input onclick="select()" class="span5"  style="color:#008000" type="text" value="<?php echo $assignment_url;?>">
+  	</p>
+
+		<h5>OBJECTIVE</h5>
+		<p><input id="objective" class="span9" type="text" name="objective" value="<?php echo $objective;?>" readonly></p>
+
+		<h5>NOTES</h5>
+		<p><textarea id="steps" rows="5" name="steps" readonly><?php echo $steps;?></textarea></p>
+
 			<h4 id="progress">Progress&nbsp;&bull;&nbsp;<a href="#" data-toggle="tooltip" title="" data-original-title="<?php echo $progress_tip;?>">?</a></h4>
 
 			  <table id="scanner_data">
-				<th>Student</th>
-				<th>Elapsed Time</th>
-				<!--th>Synopsis</th-->
-				<th>Status</th>
-				<th>Report</th>
+			  	<tr>
+					<th>Student</th>
+					<th>Elapsed Time</th>
+					<!--th>Synopsis</th-->
+					<th>Status</th>
+					<th>Report</th>
+				</tr>
 				<?php
 					if (! empty($scanner_data)) {
 						foreach($scanner_data as $data) { //ds($data,1);?>
@@ -91,12 +95,12 @@
 			<?php } else { ?>
 				<?php for ($i = 0; $i < 4; $i++) { ?>
 				<tr>
-					<td class="scanner_cell" colspan="5">&nbsp;</td>
+					<td class="scanner_cell" colspan="4">&nbsp;</td>
 				</tr>
 					<?php } ?>
 			<?php } ?>
 			</table>
-	</p>
+
 	<hr>
 <div id="getlost">
 	<?php $this->load->view('/components/footer') ?>

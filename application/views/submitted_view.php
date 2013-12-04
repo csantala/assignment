@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
     <!-- Excel-like css -->
     <link href="/css/excel-2007.css" rel="stylesheet" type="text/css" />
@@ -23,8 +23,8 @@
     <link href="/common/bootstrap/css/responsive.css" rel="stylesheet" />
 
   	<!-- Bootstrap Extended -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css"></link>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<script src="js/wysihtml5-0.3.0_rc2.js"></script>
 	<script src="js/jquery-1.7.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
