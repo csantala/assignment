@@ -145,6 +145,7 @@ input {
 #steps {
 	color:#000000;
     width:99%;
+    height:100px;
 }
 
 .comments {
