@@ -52,7 +52,8 @@ elseif (strpos($_SERVER['SERVER_NAME'], 'staging.assignment.ablitica.com') === 0
 	error_reporting(E_ALL);
 }
 # LOCAL ENVIRONMENT
-elseif (strpos($_SERVER['SERVER_NAME'], 'a.loc') === 0) {
+elseif(strpos($_SERVER['SERVER_NAME'], 'assignment.loc') === 0 ||
+	strpos($_SERVER['SERVER_NAME'], 'a.loc') === 0 ){
 
 	# env name
 	$config['env']	= 'local';
