@@ -68,16 +68,16 @@ elseif (strpos($_SERVER['SERVER_NAME'], '[staging domain]') === 0) {
 	error_reporting(E_ALL);
 }
 # LOCAL ENVIRONMENT
-elseif (strpos($_SERVER['SERVER_NAME'], '[dev domain]') === 0) {
+elseif (strpos($_SERVER['SERVER_NAME'], 'assignment.app') === 0) {
 
 	# env name
 	$config['env']	= 'local';
 
 	# database settings for local
-	$config['dbhostname']	= "";
-	$config['dbusername']	= "";
-	$config['dbpassword']	= "";
-	$config['dbname']	= "";
+	$config['dbhostname']	= "localhost";
+	$config['dbusername']	= "root";
+	$config['dbpassword']	= "secret";
+	$config['dbname']	= "assignment_local";
 
 	# report all errors
 	error_reporting(E_ALL);
